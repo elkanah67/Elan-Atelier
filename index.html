@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Élan Atelier | Digital Closet · Wine Red Edition</title>
+    <title>Élan Atelier | Digital Closet · Wine Red Atelier</title>
     <!-- Google Fonts: refined typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -16,14 +16,13 @@
         }
 
         body {
-            background-color: #6a1e2c;   /* solid wine red background - deep, rich & elegant */
+            background-color: #6a1e2c;
             font-family: 'Inter', sans-serif;
             color: #f6ede8;
             line-height: 1.4;
             scroll-behavior: smooth;
         }
 
-        /* refined container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -90,30 +89,43 @@
             border: 1px solid #c48976;
         }
 
-        /* ========== HERO SECTION WITH BACKGROUND IMAGE (Digital Closet.png) ========== */
+        /* ========== HERO SECTION WITH BACKGROUND IMAGE ========== */
+        /* Multiple fallback options to ensure image appears on GitHub Pages */
         .hero-section {
             border-radius: 32px;
             margin-bottom: 48px;
             overflow: hidden;
             box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.35);
-            /* Using the uploaded image "Digital Closet.png" as background */
-            background-image: url('Digital Closet.png');
-            background-size: cover;
-            background-position: center 30%;
-            background-repeat: no-repeat;
             position: relative;
+            min-height: 520px;
         }
 
-        /* Elegant overlay to ensure text readability while keeping the image prominent */
+        /* Background image with multiple fallback paths for GitHub compatibility */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            z-index: 0;
+        }
+
         .hero-overlay {
-            background: rgba(60, 15, 25, 0.5);  /* wine-tinted overlay for depth & contrast */
+            position: relative;
+            z-index: 1;
+            background: rgba(60, 15, 25, 0.55);
             backdrop-filter: brightness(0.98) blur(0.8px);
             border-radius: 32px;
-            padding: 64px 32px 56px;
+            padding: 80px 32px 72px;
             transition: all 0.2s;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* inner hero content */
         .hero-quote {
             text-align: center;
             max-width: 900px;
@@ -128,42 +140,43 @@
             color: #fffcf0;
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
             margin-bottom: 16px;
-            background: rgba(0,0,0,0.25);
+            background: rgba(0,0,0,0.3);
             display: inline-block;
-            padding: 6px 18px;
-            border-radius: 40px;
-            backdrop-filter: blur(3px);
+            padding: 6px 22px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
         }
 
         .hero-quote h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
+            font-size: 2.9rem;
             font-weight: 500;
             max-width: 800px;
-            margin: 16px auto 0;
+            margin: 20px auto 0;
             line-height: 1.2;
             color: #ffffff;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
             letter-spacing: -0.2px;
         }
 
         .hero-quote .attribution {
-            margin-top: 24px;
+            margin-top: 28px;
             font-size: 0.95rem;
             font-style: italic;
             color: #fff8f0;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-            background: rgba(0,0,0,0.3);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.35);
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 24px;
             border-radius: 60px;
             backdrop-filter: blur(4px);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         @media (max-width: 780px) {
             .hero-overlay {
                 padding: 48px 20px;
+                min-height: 400px;
             }
             .hero-quote h2 {
                 font-size: 2rem;
@@ -172,9 +185,24 @@
                 font-size: 0.9rem;
                 letter-spacing: 3px;
             }
+            .hero-section {
+                min-height: 400px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .icon-biography {
+                padding: 32px 24px;
+            }
         }
 
-        /* welcome grid */
         .welcome-grid {
             display: flex;
             flex-wrap: wrap;
@@ -240,7 +268,6 @@
             color: #ffefe7;
         }
 
-        /* categories section */
         .categories-section {
             margin: 64px 0 56px;
         }
@@ -318,7 +345,6 @@
             border-bottom-color: #fff0e6;
         }
 
-        /* icon biography */
         .icon-biography {
             background: #5b1929;
             border-radius: 40px;
@@ -391,7 +417,6 @@
             color: #fff2e8;
         }
 
-        /* vogue spotlight */
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -456,7 +481,6 @@
             color: #ffe3d4;
         }
 
-        /* footer */
         footer {
             border-top: 1px solid #c18c78;
             margin-top: 60px;
@@ -492,25 +516,6 @@
             font-weight: 400;
             color: #ffe6da;
         }
-
-        @media (max-width: 780px) {
-            .container {
-                padding: 0 20px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-            .icon-biography {
-                padding: 32px 24px;
-            }
-            .hero-overlay {
-                padding: 40px 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -530,9 +535,10 @@
         </div>
     </div>
 
-    <!-- ========== HERO SECTION WITH "Digital Closet.png" AS BACKGROUND ========== -->
-    <!-- The image file "Digital Closet.png" is applied as background covering the entire top rectangle -->
+    <!-- ========== HERO SECTION WITH BACKGROUND IMAGE ========== -->
+    <!-- Using img tag for reliable GitHub Pages display -->
     <div class="hero-section">
+        <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
         <div class="hero-overlay">
             <div class="hero-quote">
                 <p>What should I wear today?</p>
@@ -544,13 +550,13 @@
         </div>
     </div>
 
-    <!-- welcome / ethos: tailored for teenagers seeking timeless elegance -->
+    <!-- welcome / ethos -->
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
             <p>Welcome to Élan Atelier — a space created for teenagers that see fashion as more than just trends. This is for those who prefer timeless elegance over streetwear and who express themselves through refined, polished style. Élan Atelier celebrates individuality, confidence and the art of dressing with intention.</p>
             <div class="signature-line"></div>
-            <p class="welcome-quote">"Elegance is not about being noticed, it’s about being remembered."</p>
+            <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
         </div>
         <div class="welcome-image">
             <i class="fas fa-vest"></i>
@@ -560,7 +566,7 @@
         </div>
     </div>
 
-    <!-- Clothing · Shoes · Accessories categories -->
+    <!-- Categories -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -585,7 +591,7 @@
         </div>
     </div>
 
-    <!-- "The Biography of an Icon" — featured story block, inspired by the PNG -->
+    <!-- Biography of an Icon -->
     <div class="icon-biography">
         <div class="bio-text">
             <h3>The Biography of an Icon</h3>
@@ -603,7 +609,7 @@
         </div>
     </div>
 
-    <!-- VOGUE FT. editorial content (spotlight) -->
+    <!-- VOGUE FT. editorial -->
     <div class="vogue-spotlight">
         <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
         <h4>Inside the Digital Closet</h4>
@@ -617,7 +623,7 @@
             <div class="editorial-item">
                 <i class="fas fa-smile"></i>
                 <h5>Never fully dressed</h5>
-                <p>“without a smile” — ANNIÉ</p>
+                <p>"without a smile" — ANNIÉ</p>
             </div>
             <div class="editorial-item">
                 <i class="fas fa-clock"></i>
@@ -627,7 +633,7 @@
         </div>
     </div>
 
-    <!-- footer with quote + smile emblem -->
+    <!-- footer -->
     <footer>
         <div class="footer-links">
             <a href="#">About Élan</a>
@@ -643,5 +649,50 @@
     </footer>
 </div>
 
+<!-- 
+    ============================================
+    GITHUB PAGES SETUP INSTRUCTIONS
+    ============================================
+    
+    To make sure ALL images appear correctly on your GitHub website:
+    
+    1. In your repository 'Elan-Atelier', you need to upload these image files:
+       
+       ✓ Digital Closet.png          (main hero background image)
+       ✓ Digital Closet (2).png      (fallback image, also works)
+    
+    2. Make sure both files are in the SAME folder as index.html
+       (the root of your repository)
+    
+    3. Your repository structure should look like:
+       
+       Elan-Atelier/
+       ├── index.html
+       ├── Digital Closet.png
+       └── Digital Closet (2).png
+    
+    4. To upload images to GitHub:
+       - Go to your repository on GitHub.com
+       - Click "Add file" → "Upload files"
+       - Drag and drop both PNG images
+       - Scroll down and click "Commit changes"
+    
+    5. The code includes a fallback system:
+       - First tries to load 'Digital Closet.png'
+       - If that fails, tries 'Digital Closet (2).png'
+       - If both fail, shows a wine red background
+    
+    6. After uploading everything, GitHub Pages will automatically
+       deploy your site. Wait 1-2 minutes, then visit:
+       https://elkanah67.github.io/Elan-Atelier/
+    
+    The image will appear as the background of the top hero rectangle,
+    right behind the text "What should I wear today?"
+    
+    If you still don't see the image:
+    - Check that filenames match EXACTLY (case-sensitive)
+    - Clear your browser cache (Ctrl+Shift+Delete)
+    - Wait 2-5 minutes for GitHub Pages to fully deploy
+-->
 </body>
 </html>
