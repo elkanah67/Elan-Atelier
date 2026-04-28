@@ -90,7 +90,6 @@
         }
 
         /* ========== HERO SECTION WITH BACKGROUND IMAGE ========== */
-        /* Multiple fallback options to ensure image appears on GitHub Pages */
         .hero-section {
             border-radius: 32px;
             margin-bottom: 48px;
@@ -100,7 +99,6 @@
             min-height: 520px;
         }
 
-        /* Background image with multiple fallback paths for GitHub compatibility */
         .hero-bg {
             position: absolute;
             top: 0;
@@ -197,9 +195,6 @@
             }
             .nav-links {
                 gap: 20px;
-            }
-            .icon-biography {
-                padding: 32px 24px;
             }
         }
 
@@ -345,78 +340,6 @@
             border-bottom-color: #fff0e6;
         }
 
-        .icon-biography {
-            background: #5b1929;
-            border-radius: 40px;
-            padding: 56px 48px;
-            margin: 64px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            border: 1px solid #cb957f;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .bio-text {
-            flex: 1.4;
-        }
-
-        .bio-text h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 500;
-            margin-bottom: 16px;
-            letter-spacing: -0.2px;
-            color: #fff6ef;
-        }
-
-        .bio-text .subhead {
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: #ffdecb;
-            margin-bottom: 20px;
-        }
-
-        .bio-text p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #feece3;
-            margin-bottom: 24px;
-        }
-
-        .bio-quote {
-            font-style: italic;
-            font-size: 1.2rem;
-            border-left: 3px solid #ffcfb6;
-            padding-left: 20px;
-            color: #fff5ea;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .bio-icon {
-            flex: 0.8;
-            text-align: center;
-            background: #43141f;
-            border-radius: 32px;
-            padding: 40px 20px;
-            border: 1px solid #bc7e6a;
-        }
-
-        .bio-icon i {
-            font-size: 4rem;
-            color: #ffdbca;
-            margin-bottom: 12px;
-        }
-
-        .bio-icon span {
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: #fff2e8;
-        }
-
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -536,7 +459,6 @@
     </div>
 
     <!-- ========== HERO SECTION WITH BACKGROUND IMAGE ========== -->
-    <!-- Using img tag for reliable GitHub Pages display -->
     <div class="hero-section">
         <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
         <div class="hero-overlay">
@@ -591,24 +513,6 @@
         </div>
     </div>
 
-    <!-- Biography of an Icon -->
-    <div class="icon-biography">
-        <div class="bio-text">
-            <h3>The Biography of an Icon</h3>
-            <div class="subhead">Legacy of timeless style · wine red chronicles</div>
-            <p>From the archives of Élan Atelier, we trace the journey of self-expression through generations. Icons are not born from logos alone — they are shaped by conviction, by the way they carry a garment, and by the grace that outruns seasons. This biography explores how a personal wardrobe becomes a narrative of elegance, resilience, and authenticity.</p>
-            <div class="bio-quote">
-                “Fashion fades, but the attitude of elegance remains the truest form of luxury.”
-            </div>
-        </div>
-        <div class="bio-icon">
-            <i class="far fa-heart"></i>
-            <i class="fas fa-crown"></i>
-            <div><span>Chanel · Gucci · Élan</span></div>
-            <p style="font-size: 0.7rem; margin-top: 12px; color: #ffeadf;">The icons that inspire us</p>
-        </div>
-    </div>
-
     <!-- VOGUE FT. editorial -->
     <div class="vogue-spotlight">
         <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
@@ -654,45 +558,25 @@
     GITHUB PAGES SETUP INSTRUCTIONS
     ============================================
     
-    To make sure ALL images appear correctly on your GitHub website:
+    To make sure the image appears correctly on your GitHub website:
     
-    1. In your repository 'Elan-Atelier', you need to upload these image files:
-       
+    1. Upload these image files to your repository:
        ✓ Digital Closet.png          (main hero background image)
-       ✓ Digital Closet (2).png      (fallback image, also works)
+       ✓ Digital Closet (2).png      (fallback image)
     
     2. Make sure both files are in the SAME folder as index.html
-       (the root of your repository)
     
     3. Your repository structure should look like:
-       
        Elan-Atelier/
        ├── index.html
        ├── Digital Closet.png
        └── Digital Closet (2).png
     
-    4. To upload images to GitHub:
-       - Go to your repository on GitHub.com
-       - Click "Add file" → "Upload files"
-       - Drag and drop both PNG images
-       - Scroll down and click "Commit changes"
-    
-    5. The code includes a fallback system:
-       - First tries to load 'Digital Closet.png'
-       - If that fails, tries 'Digital Closet (2).png'
-       - If both fail, shows a wine red background
-    
-    6. After uploading everything, GitHub Pages will automatically
-       deploy your site. Wait 1-2 minutes, then visit:
+    4. After uploading, GitHub Pages will deploy your site at:
        https://elkanah67.github.io/Elan-Atelier/
     
     The image will appear as the background of the top hero rectangle,
     right behind the text "What should I wear today?"
-    
-    If you still don't see the image:
-    - Check that filenames match EXACTLY (case-sensitive)
-    - Clear your browser cache (Ctrl+Shift+Delete)
-    - Wait 2-5 minutes for GitHub Pages to fully deploy
 -->
 </body>
 </html>
