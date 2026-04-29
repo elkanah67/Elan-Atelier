@@ -239,6 +239,7 @@
             font-size: 1.1rem;
         }
 
+        /* ========== WELCOME IMAGE BOX WITH RED VOGUE IMAGE ========== */
         .welcome-image {
             flex: 0.8;
             background: #551a28;
@@ -249,10 +250,21 @@
             border: 1px solid #bc7f6d;
         }
 
+        .welcome-image .vogue-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 2px solid #dbaa98;
+            object-fit: cover;
+        }
+
         .welcome-image i {
-            font-size: 3.8rem;
+            font-size: 3rem;
             color: #ffddcc;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .welcome-image p {
@@ -261,6 +273,7 @@
             font-weight: 500;
             letter-spacing: 1px;
             color: #ffefe7;
+            margin-top: 12px;
         }
 
         .categories-section {
@@ -340,7 +353,7 @@
             border-bottom-color: #fff0e6;
         }
 
-        /* VOGUE FT. EDITORIAL SECTION - only the tagline remains, all cards/content removed */
+        /* VOGUE FT. EDITORIAL SECTION - only the tagline remains */
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -436,7 +449,7 @@
         </div>
     </div>
 
-    <!-- welcome / ethos -->
+    <!-- welcome / ethos with RED VOGUE IMAGE in the box -->
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
@@ -444,10 +457,12 @@
             <div class="signature-line"></div>
             <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
         </div>
+        <!-- The box where "red vogue.jfif" image is placed -->
         <div class="welcome-image">
-            <i class="fas fa-vest"></i>
-            <i class="fas fa-shoe-prints" style="margin: 0 6px;"></i>
-            <i class="fas fa-gem"></i>
+            <!-- red vogue.jfif image appears here - make sure the file is in the same folder as index.html -->
+            <img class="vogue-image" src="red vogue.jfif" alt="Red Vogue Editoriale" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fas fa-gem" style="display: inline-block;"></i>
+            <i class="fas fa-vest" style="display: inline-block; margin-left: 8px;"></i>
             <p>curated with purpose · deep wine atelier</p>
         </div>
     </div>
@@ -477,7 +492,7 @@
         </div>
     </div>
 
-    <!-- VOGUE FT. EDITORIAL - only the tag and the message remain, all cards/content removed -->
+    <!-- VOGUE FT. EDITORIAL - only the tag and the message remain -->
     <div class="vogue-spotlight">
         <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
         <div class="vogue-message">
@@ -506,25 +521,36 @@
     GITHUB PAGES SETUP INSTRUCTIONS
     ============================================
     
-    To make sure the image appears correctly on your GitHub website:
+    Your repository now has these files (from your screenshot):
+    ✓ Digital Closet.png
+    ✓ Digital Closet (2).png
+    ✓ index.html
+    ✓ red vogue.jfif
     
-    1. Upload these image files to your repository:
-       ✓ Digital Closet.png          (main hero background image)
-       ✓ Digital Closet (2).png      (fallback image)
+    The "red vogue.jfif" image will appear inside the box where it says 
+    "curated with purpose · deep wine atelier"
     
-    2. Make sure both files are in the SAME folder as index.html
+    To make sure everything displays correctly:
     
-    3. Your repository structure should look like:
+    1. All files must be in the SAME folder (root of your repository)
+    
+    2. Your repository structure should look like:
        Elan-Atelier/
        ├── index.html
        ├── Digital Closet.png
-       └── Digital Closet (2).png
+       ├── Digital Closet (2).png
+       └── red vogue.jfif
     
-    4. After uploading, GitHub Pages will deploy your site at:
+    3. GitHub Pages will deploy your site at:
        https://elkanah67.github.io/Elan-Atelier/
     
-    The image will appear as the background of the top hero rectangle,
-    right behind the text "What should I wear today?"
+    The red vogue image will be displayed prominently in the right-side box,
+    above the text "curated with purpose · deep wine atelier"
+    
+    If the image doesn't appear immediately:
+    - Check that the filename is EXACTLY "red vogue.jfif" (spelling and case)
+    - Clear your browser cache (Ctrl+Shift+Delete)
+    - Wait 1-2 minutes for GitHub Pages to redeploy
 -->
 </body>
 </html>
