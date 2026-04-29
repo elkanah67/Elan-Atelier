@@ -7,14 +7,12 @@
     <style>
         /* Simple CSS for the gallery page */
         
-        /* Reset margins and padding */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        /* Body styling - matches the wine red theme of the main site */
         body {
             background-color: #6a1e2c;
             font-family: Arial, Helvetica, sans-serif;
@@ -57,27 +55,16 @@
             transform: scale(1.02);
         }
         
-        /* ========== SIMPLE GRID FOR 7 PICTURES ========== */
-        /* The grid container - arranges images in rows */
+        /* SIMPLE GRID FOR 7 PICTURES */
         .image-grid {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            
-            /* CSS Grid - creates a responsive grid */
             display: grid;
-            
-            /* On large screens: 4 columns */
-            /* On medium screens: 3 columns */
-            /* On small screens: 2 columns */
-            /* On mobile: 1 column */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            
-            /* Space between grid items */
             gap: 25px;
         }
         
-        /* Each card/item in the grid */
         .grid-item {
             background-color: #551a28;
             border-radius: 20px;
@@ -88,12 +75,10 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
-        /* Hover effect - image lifts up slightly */
         .grid-item:hover {
             transform: translateY(-5px);
         }
         
-        /* Styling for the images */
         .grid-item img {
             width: 100%;
             height: 200px;
@@ -101,7 +86,6 @@
             display: block;
         }
         
-        /* Caption text under each image */
         .caption {
             padding: 12px;
             font-size: 0.9rem;
@@ -110,7 +94,6 @@
             background-color: #4a1522;
         }
         
-        /* Simple footer */
         .gallery-footer {
             text-align: center;
             padding: 30px;
@@ -120,7 +103,6 @@
             font-size: 0.8rem;
         }
         
-        /* Responsive adjustments for very small screens */
         @media (max-width: 600px) {
             .image-grid {
                 gap: 15px;
@@ -136,50 +118,12 @@
 </head>
 <body>
 
-    <!-- Header section with title and back button -->
     <div class="gallery-header">
         <h1>✨ Élan Atelier Gallery ✨</h1>
         <a href="index.html" class="back-btn">← Back to Home</a>
     </div>
 
-    <!-- 
-        ============================================
-        SIMPLE GRID FOR 7 PICTURES
-        ============================================
-        
-        EXPLANATION OF THE GRID:
-        
-        1. The container <div class="image-grid"> uses CSS Grid.
-        2. "grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))" means:
-           - Each column is at least 250px wide
-           - It automatically fits as many columns as possible
-           - On a big screen: 4-5 columns
-           - On a tablet: 3 columns  
-           - On a phone: 2 columns or 1 column
-        
-        3. Each picture is inside a "grid-item" div.
-        4. Images use "object-fit: cover" so they fill the space without distortion.
-        
-        ============================================
-        HOW TO ADD YOUR OWN IMAGES:
-        ============================================
-        
-        To replace these placeholder images with your own:
-        
-        1. Upload your image files to the same folder as gallery.html
-        2. Change the "src" attribute to your image filename
-           Example: src="my-dress.jpg"
-        3. Change the caption text to describe your image
-        
-        You can also add more pictures by copying this block:
-        
-        <div class="grid-item">
-            <img src="your-image.jpg" alt="description">
-            <div class="caption">Your caption here</div>
-        </div>
-    -->
-    
-    <!-- The 7-image grid -->
+    <!-- 7-image grid -->
     <div class="image-grid">
         
         <!-- Image 1 -->
@@ -226,42 +170,9 @@
         
     </div>
     
-    <!-- Simple footer -->
     <div class="gallery-footer">
         <p>© 2025 Élan Atelier — Timeless elegance captured in every frame</p>
     </div>
 
-    <!-- 
-        ============================================
-        VERY SIMPLE EXPLANATION:
-        ============================================
-        
-        HOW THE GALLERY WORKS:
-        
-        1. The page has a title and a "Back to Home" button.
-        2. The button is a link (<a href="index.html">) that takes you back.
-        
-        3. The 7 pictures are arranged using CSS Grid.
-           - Grid automatically arranges pictures in rows.
-           - On a computer: 4 pictures per row.
-           - On a tablet: 3 pictures per row.
-           - On a phone: 2 or 1 picture per row.
-        
-        4. Each picture has:
-           - An image (using <img src="...">)
-           - A caption (describing what it is)
-        
-        5. When you hover over a picture, it lifts up slightly (nice effect).
-        
-        TO USE YOUR OWN PICTURES:
-        
-        - Save your pictures in the same folder as gallery.html
-        - Change the src="..." to your picture's filename
-        - Example: src="my-fashion-photo.jpg"
-        - Change the caption text inside the <div class="caption"> tags
-        
-        That's it! Very simple and clean.
-    -->
-    
 </body>
 </html>
