@@ -396,6 +396,7 @@
             line-height: 1.5;
         }
 
+        /* ========== FOOTER - REMOVED INDIVIDUAL LINKS, KEPT ONLY SMILE AND COPYRIGHT ========== */
         footer {
             border-top: 1px solid #c18c78;
             margin-top: 60px;
@@ -405,38 +406,24 @@
             color: #fee7dd;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: #ffefe5;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-        }
-
         .smile-tag {
-            margin-top: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
             font-size: 0.85rem;
             font-style: italic;
             font-weight: 400;
             color: #ffe6da;
+        }
+
+        .copyright {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- header with navigation -->
+    <!-- header with navigation - "Categories" changed to "Gallery" -->
     <div class="top-bar">
         <div class="logo-area">
             <h1>Élan Atelier</h1>
@@ -445,7 +432,7 @@
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">Search</a>
-            <a href="#">Categories</a>
+            <a href="#">Gallery</a>
             <div class="vogue-badge">VOGUE FT.</div>
         </div>
     </div>
@@ -473,8 +460,7 @@
             <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
         </div>
         
-        <!-- ========== BOX WITH VOGUE-EMBLEM.PNG IMAGE ========== -->
-        <!-- The image "Vogue-Emblem.png" appears right here, perfectly fitted in the rectangle -->
+        <!-- Box with Vogue-Emblem.png image -->
         <div class="welcome-image">
             <img class="vogue-emblem-image" src="Vogue-Emblem.png" alt="Vogue Emblem" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div class="icon-row">
@@ -486,7 +472,7 @@
         </div>
     </div>
 
-    <!-- Categories -->
+    <!-- Categories Section - title remains "Edit by category" as requested in original design -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -519,65 +505,50 @@
         </div>
     </div>
 
-    <!-- footer -->
+    <!-- ========== FOOTER - REMOVED: About Élan, The Digital Closet, Sustainability, Journal, Contact ========== -->
+    <!-- Only the smile tag and copyright remain -->
     <footer>
-        <div class="footer-links">
-            <a href="#">About Élan</a>
-            <a href="#">The Digital Closet</a>
-            <a href="#">Sustainability</a>
-            <a href="#">Journal</a>
-            <a href="#">Contact</a>
-        </div>
         <div class="smile-tag">
             <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
         </div>
-        <p style="margin-top: 24px;">© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        <div class="copyright">
+            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        </div>
     </footer>
 </div>
 
 <!-- 
     ============================================
-    GITHUB PAGES SETUP - CORRECT FILE PLACEMENT
+    CHANGES MADE:
     ============================================
     
-    Your repository should have these files in the SAME folder:
+    1. Navigation: "Categories" → "Gallery"
+    
+    2. Footer: Removed these links:
+       - About Élan
+       - The Digital Closet
+       - Sustainability
+       - Journal
+       - Contact
+       
+       Only kept:
+       - Smile quote with ANNIÉ
+       - Copyright text
+    
+    3. Image: Using Vogue-Emblem.png in the right-side box
+    
+    ============================================
+    GITHUB PAGES SETUP
+    ============================================
+    
+    Your repository should have:
     ✓ index.html
     ✓ Digital Closet.png
     ✓ Digital Closet (2).png
-    ✓ Vogue-Emblem.png          (NEW - replaces red vogue.jfif)
+    ✓ Vogue-Emblem.png
     
-    The "Vogue-Emblem.png" image will NOW appear INSIDE the right-side box
-    perfectly fitted above "curated with purpose · deep wine atelier"
-    
-    Image styling:
-    - Max width: 200px (responsive)
-    - Rounded corners: 16px
-    - Gold/border accent: 2px solid #dbaa98
-    - Soft shadow for depth
-    - Hover effect: subtle scale animation
-    
-    To ensure everything displays correctly on your GitHub website:
-    
-    1. Upload Vogue-Emblem.png to your repository root folder
-    
-    2. Your repository structure should be:
-       Elan-Atelier/
-       ├── index.html
-       ├── Digital Closet.png
-       ├── Digital Closet (2).png
-       └── Vogue-Emblem.png
-    
-    3. GitHub Pages will deploy at:
-       https://elkanah67.github.io/Elan-Atelier/
-    
-    If the image doesn't show:
-    - Verify the filename is EXACTLY "Vogue-Emblem.png" (case-sensitive)
-    - Check that the file extension is .png (not .PNG or other)
-    - Refresh after clearing browser cache (Ctrl+Shift+Delete)
-    - Wait 2-3 minutes for GitHub Pages to redeploy
-    
-    The image will be beautifully displayed in the wine-colored box
-    on the right side of the "For the ones who dress with intention" section.
+    GitHub Pages URL:
+    https://elkanah67.github.io/Elan-Atelier/
 -->
 </body>
 </html>
