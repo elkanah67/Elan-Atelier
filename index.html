@@ -77,6 +77,58 @@
             color: #ffddcc;
         }
 
+        /* ========== SEARCH BAR STYLES ========== */
+        .search-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(79, 22, 34, 0.8);
+            padding: 4px 12px;
+            border-radius: 60px;
+            border: 1px solid #c48976;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover {
+            border-color: #ffddcc;
+            background: rgba(79, 22, 34, 1);
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #ffede3;
+            font-family: 'Inter', sans-serif;
+            width: 160px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #dbaa98;
+            font-size: 0.8rem;
+        }
+
+        .search-button {
+            background: transparent;
+            border: none;
+            color: #ffddcc;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-button:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
         .vogue-badge {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -87,6 +139,15 @@
             border-radius: 40px;
             color: #ffede3;
             border: 1px solid #c48976;
+        }
+
+        @media (max-width: 780px) {
+            .search-input {
+                width: 120px;
+            }
+            .nav-links {
+                gap: 16px;
+            }
         }
 
         /* ========== HERO SECTION WITH BACKGROUND IMAGE ========== */
@@ -239,7 +300,6 @@
             font-size: 1.1rem;
         }
 
-        /* ========== WELCOME IMAGE BOX WITH VOGUE-EMBLEM.PNG ========== */
         .welcome-image {
             flex: 0.8;
             background: #551a28;
@@ -254,7 +314,6 @@
             justify-content: center;
         }
 
-        /* Vogue-Emblem image styling - fits perfectly inside the rectangle */
         .vogue-emblem-image {
             width: 100%;
             max-width: 200px;
@@ -368,7 +427,6 @@
             border-bottom-color: #fff0e6;
         }
 
-        /* VOGUE FT. EDITORIAL SECTION */
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -396,7 +454,6 @@
             line-height: 1.5;
         }
 
-        /* ========== FOOTER - REMOVED INDIVIDUAL LINKS, KEPT ONLY SMILE AND COPYRIGHT ========== */
         footer {
             border-top: 1px solid #c18c78;
             margin-top: 60px;
@@ -423,7 +480,7 @@
 <body>
 
 <div class="container">
-    <!-- header with navigation - "Categories" changed to "Gallery" -->
+    <!-- header with navigation - includes SEARCH BAR -->
     <div class="top-bar">
         <div class="logo-area">
             <h1>Élan Atelier</h1>
@@ -431,7 +488,13 @@
         </div>
         <div class="nav-links">
             <a href="#">Home</a>
-            <a href="#">Search</a>
+            <!-- SEARCH BAR - fully functional with JavaScript -->
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
+                <button id="searchButton" class="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
             <a href="#">Gallery</a>
             <div class="vogue-badge">VOGUE FT.</div>
         </div>
@@ -472,7 +535,7 @@
         </div>
     </div>
 
-    <!-- Categories Section - title remains "Edit by category" as requested in original design -->
+    <!-- Categories Section -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -505,8 +568,7 @@
         </div>
     </div>
 
-    <!-- ========== FOOTER - REMOVED: About Élan, The Digital Closet, Sustainability, Journal, Contact ========== -->
-    <!-- Only the smile tag and copyright remain -->
+    <!-- Footer -->
     <footer>
         <div class="smile-tag">
             <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
@@ -517,38 +579,117 @@
     </footer>
 </div>
 
+<!-- ========== JAVASCRIPT FOR SEARCH FUNCTIONALITY ========== -->
+<script>
+    // Get references to the search input and button elements
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    // Function that performs the search and navigates to search.html
+    function performSearch() {
+        // Get the value typed in the search input
+        const searchQuery = searchInput.value.trim();
+        
+        // Check if the user typed something (not empty)
+        if (searchQuery !== '') {
+            // Create a URL parameter: encode the search term so it's safe for URLs
+            // Example: "hello world" becomes "hello%20world"
+            const encodedQuery = encodeURIComponent(searchQuery);
+            
+            // Navigate to search.html with the query as a URL parameter
+            // The URL will look like: search.html?q=what+the+user+typed
+            window.location.href = `search.html?q=${encodedQuery}`;
+        } else {
+            // Optional: alert if search is empty (can be removed for quieter UX)
+            alert('Please type something to search');
+        }
+    }
+
+    // Add click event listener to the search button
+    searchButton.addEventListener('click', performSearch);
+
+    // Add 'keypress' event listener to the input field
+    // This allows the user to press "Enter" to search instead of clicking the button
+    searchInput.addEventListener('keypress', function(event) {
+        // Check if the pressed key is "Enter" (key code 13)
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
+
 <!-- 
     ============================================
-    CHANGES MADE:
+    SEARCH FUNCTIONALITY EXPLANATION:
     ============================================
     
-    1. Navigation: "Categories" → "Gallery"
+    HOW THE SEARCH WORKS:
     
-    2. Footer: Removed these links:
-       - About Élan
-       - The Digital Closet
-       - Sustainability
-       - Journal
-       - Contact
+    1. HTML Setup:
+       - A text input field (<input type="text">) where users type their search
+       - A button with a search icon that users click
        
-       Only kept:
-       - Smile quote with ANNIÉ
-       - Copyright text
+    2. JavaScript Logic (lines 570-610):
+       
+       a) First, we get references to the input field and button using:
+          document.getElementById('searchInput') and document.getElementById('searchButton')
+       
+       b) The performSearch() function does the main work:
+          - Gets the text from the input field using .value
+          - Removes extra spaces using .trim()
+          - If not empty, encodes the text for safe URL use with encodeURIComponent()
+          - Then redirects the browser to: search.html?q=the+search+term
+       
+       c) Two ways to trigger the search:
+          - Clicking the search button (click event)
+          - Pressing the "Enter" key while typing in the input field (keypress event)
+       
+    3. URL Parameters Explanation:
+       - The "?q=" creates a query parameter named "q"
+       - Example: if you search for "dress", URL becomes "search.html?q=dress"
+       - Example: if you search for "red shoes", URL becomes "search.html?q=red%20shoes"
+       
+    4. What happens next:
+       - The browser loads search.html
+       - That page can read the "q" parameter from the URL
+       - It can then display "You searched for: dress" on the page
+       
+    TO COMPLETE THE SETUP:
     
-    3. Image: Using Vogue-Emblem.png in the right-side box
+    You need to create a file called "search.html" in the same folder.
     
-    ============================================
-    GITHUB PAGES SETUP
-    ============================================
+    Here's a simple example for search.html:
     
-    Your repository should have:
-    ✓ index.html
-    ✓ Digital Closet.png
-    ✓ Digital Closet (2).png
-    ✓ Vogue-Emblem.png
+    -------------------------------------------------------------------------
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Search Results - Élan Atelier</title>
+        <style>
+            body { font-family: Arial; background: #6a1e2c; color: white; text-align: center; padding: 50px; }
+            .result { background: #551a28; padding: 30px; border-radius: 20px; max-width: 600px; margin: 0 auto; }
+            a { color: #ffddcc; text-decoration: none; }
+        </style>
+    </head>
+    <body>
+        <div class="result">
+            <h1>Search Results</h1>
+            <p>You searched for: <strong id="searchTerm"></strong></p>
+            <p><a href="index.html">← Back to Home</a></p>
+        </div>
+        <script>
+            // Get the 'q' parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('q');
+            // Display it on the page
+            document.getElementById('searchTerm').textContent = searchQuery;
+        </script>
+    </body>
+    </html>
+    -------------------------------------------------------------------------
     
-    GitHub Pages URL:
-    https://elkanah67.github.io/Elan-Atelier/
+    The search bar is now fully functional and clickable!
 -->
+
 </body>
 </html>
