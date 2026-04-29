@@ -239,7 +239,7 @@
             font-size: 1.1rem;
         }
 
-        /* ========== WELCOME IMAGE BOX WITH RED VOGUE IMAGE ========== */
+        /* ========== WELCOME IMAGE BOX WITH VOGUE-EMBLEM.PNG ========== */
         .welcome-image {
             flex: 0.8;
             background: #551a28;
@@ -248,23 +248,38 @@
             text-align: center;
             box-shadow: 0 10px 25px -12px rgba(0,0,0,0.5);
             border: 1px solid #bc7f6d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .welcome-image .vogue-image {
+        /* Vogue-Emblem image styling - fits perfectly inside the rectangle */
+        .vogue-emblem-image {
             width: 100%;
             max-width: 200px;
             height: auto;
-            border-radius: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             border: 2px solid #dbaa98;
-            object-fit: cover;
+            object-fit: contain;
+            background: #f5ede4;
+            transition: transform 0.3s ease;
         }
 
-        .welcome-image i {
-            font-size: 3rem;
+        .vogue-emblem-image:hover {
+            transform: scale(1.02);
+        }
+
+        .icon-row {
+            margin: 12px 0 8px;
+        }
+
+        .icon-row i {
+            font-size: 2rem;
             color: #ffddcc;
-            margin-bottom: 8px;
+            margin: 0 6px;
         }
 
         .welcome-image p {
@@ -273,7 +288,7 @@
             font-weight: 500;
             letter-spacing: 1px;
             color: #ffefe7;
-            margin-top: 12px;
+            margin-top: 8px;
         }
 
         .categories-section {
@@ -353,7 +368,7 @@
             border-bottom-color: #fff0e6;
         }
 
-        /* VOGUE FT. EDITORIAL SECTION - only the tagline remains */
+        /* VOGUE FT. EDITORIAL SECTION */
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -449,7 +464,7 @@
         </div>
     </div>
 
-    <!-- welcome / ethos with RED VOGUE IMAGE in the box -->
+    <!-- welcome / ethos with VOGUE-EMBLEM.PNG IMAGE in the box -->
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
@@ -457,12 +472,16 @@
             <div class="signature-line"></div>
             <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
         </div>
-        <!-- The box where "red vogue.jfif" image is placed -->
+        
+        <!-- ========== BOX WITH VOGUE-EMBLEM.PNG IMAGE ========== -->
+        <!-- The image "Vogue-Emblem.png" appears right here, perfectly fitted in the rectangle -->
         <div class="welcome-image">
-            <!-- red vogue.jfif image appears here - make sure the file is in the same folder as index.html -->
-            <img class="vogue-image" src="red vogue.jfif" alt="Red Vogue Editoriale" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <i class="fas fa-gem" style="display: inline-block;"></i>
-            <i class="fas fa-vest" style="display: inline-block; margin-left: 8px;"></i>
+            <img class="vogue-emblem-image" src="Vogue-Emblem.png" alt="Vogue Emblem" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="icon-row">
+                <i class="fas fa-gem"></i>
+                <i class="fas fa-vest"></i>
+                <i class="fas fa-shoe-prints"></i>
+            </div>
             <p>curated with purpose · deep wine atelier</p>
         </div>
     </div>
@@ -492,7 +511,7 @@
         </div>
     </div>
 
-    <!-- VOGUE FT. EDITORIAL - only the tag and the message remain -->
+    <!-- VOGUE FT. EDITORIAL -->
     <div class="vogue-spotlight">
         <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
         <div class="vogue-message">
@@ -518,39 +537,47 @@
 
 <!-- 
     ============================================
-    GITHUB PAGES SETUP INSTRUCTIONS
+    GITHUB PAGES SETUP - CORRECT FILE PLACEMENT
     ============================================
     
-    Your repository now has these files (from your screenshot):
+    Your repository should have these files in the SAME folder:
+    ✓ index.html
     ✓ Digital Closet.png
     ✓ Digital Closet (2).png
-    ✓ index.html
-    ✓ red vogue.jfif
+    ✓ Vogue-Emblem.png          (NEW - replaces red vogue.jfif)
     
-    The "red vogue.jfif" image will appear inside the box where it says 
-    "curated with purpose · deep wine atelier"
+    The "Vogue-Emblem.png" image will NOW appear INSIDE the right-side box
+    perfectly fitted above "curated with purpose · deep wine atelier"
     
-    To make sure everything displays correctly:
+    Image styling:
+    - Max width: 200px (responsive)
+    - Rounded corners: 16px
+    - Gold/border accent: 2px solid #dbaa98
+    - Soft shadow for depth
+    - Hover effect: subtle scale animation
     
-    1. All files must be in the SAME folder (root of your repository)
+    To ensure everything displays correctly on your GitHub website:
     
-    2. Your repository structure should look like:
+    1. Upload Vogue-Emblem.png to your repository root folder
+    
+    2. Your repository structure should be:
        Elan-Atelier/
        ├── index.html
        ├── Digital Closet.png
        ├── Digital Closet (2).png
-       └── red vogue.jfif
+       └── Vogue-Emblem.png
     
-    3. GitHub Pages will deploy your site at:
+    3. GitHub Pages will deploy at:
        https://elkanah67.github.io/Elan-Atelier/
     
-    The red vogue image will be displayed prominently in the right-side box,
-    above the text "curated with purpose · deep wine atelier"
+    If the image doesn't show:
+    - Verify the filename is EXACTLY "Vogue-Emblem.png" (case-sensitive)
+    - Check that the file extension is .png (not .PNG or other)
+    - Refresh after clearing browser cache (Ctrl+Shift+Delete)
+    - Wait 2-3 minutes for GitHub Pages to redeploy
     
-    If the image doesn't appear immediately:
-    - Check that the filename is EXACTLY "red vogue.jfif" (spelling and case)
-    - Clear your browser cache (Ctrl+Shift+Delete)
-    - Wait 1-2 minutes for GitHub Pages to redeploy
+    The image will be beautifully displayed in the wine-colored box
+    on the right side of the "For the ones who dress with intention" section.
 -->
 </body>
 </html>
