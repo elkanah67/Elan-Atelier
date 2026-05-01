@@ -2,209 +2,608 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Élan Atelier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Élan Atelier | Home - Timeless Elegance</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             background-color: #6a1e2c;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', sans-serif;
             color: #f6ede8;
-            min-height: 100vh;
+            line-height: 1.4;
+            scroll-behavior: smooth;
         }
-        
-        /* Header section with back button */
-        .gallery-header {
-            text-align: center;
-            padding: 40px 20px 20px 20px;
-            border-bottom: 2px solid #c48976;
-            margin-bottom: 40px;
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
         }
-        
-        .gallery-header h1 {
-            font-size: 2.5rem;
-            font-family: 'Times New Roman', serif;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+
+        /* header & navigation */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            padding: 28px 0 16px 0;
+            border-bottom: 1px solid #e6bcad;
+            margin-bottom: 32px;
+        }
+
+        .logo-area h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
             color: #fff2ea;
         }
-        
-        /* BACK TO HOME BUTTON */
-        .back-btn {
-            display: inline-block;
-            background-color: #c48976;
-            color: #4f1622;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 40px;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
+
+        .logo-area p {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f5d1c2;
+            margin-top: 4px;
         }
-        
-        .back-btn:hover {
-            background-color: #ffddcc;
-            transform: scale(1.05);
-            color: #4f1622;
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
-        /* HOME LINK in top left */
-        .home-link {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: #c48976;
-            color: #4f1622;
+
+        .nav-links a {
             text-decoration: none;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-weight: bold;
             font-size: 0.85rem;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-        
-        .home-link:hover {
-            background-color: #ffddcc;
-            transform: scale(1.02);
-        }
-        
-        /* SIMPLE GRID FOR 7 PICTURES */
-        .image-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .grid-item {
-            background-color: #551a28;
-            border-radius: 20px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid #bc7f6d;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .grid-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .grid-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .caption {
-            padding: 12px;
-            font-size: 0.9rem;
             font-weight: 500;
-            color: #ffefe7;
-            background-color: #4a1522;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f3e2d9;
+            transition: color 0.2s;
         }
-        
-        .gallery-footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #c18c78;
+
+        .nav-links a:hover {
+            color: #ffddcc;
+        }
+
+        /* Active/Current page indicator */
+        .active-page {
+            color: #ffddcc !important;
+            border-bottom: 2px solid #ffddcc;
+            padding-bottom: 4px;
+        }
+
+        /* search bar styles */
+        .search-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(79, 22, 34, 0.8);
+            padding: 4px 12px;
+            border-radius: 60px;
+            border: 1px solid #c48976;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover {
+            border-color: #ffddcc;
+            background: rgba(79, 22, 34, 1);
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #ffede3;
+            font-family: 'Inter', sans-serif;
+            width: 160px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
             color: #dbaa98;
             font-size: 0.8rem;
         }
-        
-        @media (max-width: 600px) {
-            .image-grid {
-                gap: 15px;
+
+        .search-button {
+            background: transparent;
+            border: none;
+            color: #ffddcc;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-button:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .vogue-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background: #4f1622;
+            padding: 6px 14px;
+            border-radius: 40px;
+            color: #ffede3;
+            border: 1px solid #c48976;
+        }
+
+        @media (max-width: 780px) {
+            .search-input {
+                width: 120px;
             }
-            .grid-item img {
-                height: 180px;
+            .nav-links {
+                gap: 16px;
             }
-            .gallery-header h1 {
-                font-size: 1.8rem;
+        }
+
+        /* hero section */
+        .hero-section {
+            border-radius: 32px;
+            margin-bottom: 48px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.35);
+            position: relative;
+            min-height: 520px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 1;
+            background: rgba(60, 15, 25, 0.55);
+            backdrop-filter: brightness(0.98) blur(0.8px);
+            border-radius: 32px;
+            padding: 80px 32px 72px;
+            transition: all 0.2s;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-quote {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-quote p:first-child {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-weight: 500;
+            color: #fffcf0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            margin-bottom: 16px;
+            background: rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-quote h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.9rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.2;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+            letter-spacing: -0.2px;
+        }
+
+        .hero-quote .attribution {
+            margin-top: 28px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #fff8f0;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 780px) {
+            .hero-overlay {
+                padding: 48px 20px;
+                min-height: 400px;
             }
-            .home-link {
-                top: 10px;
-                left: 10px;
-                padding: 6px 15px;
-                font-size: 0.75rem;
+            .hero-quote h2 {
+                font-size: 2rem;
             }
+            .hero-quote p:first-child {
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+            }
+            .hero-section {
+                min-height: 400px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+        }
+
+        .welcome-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            margin: 56px 0 64px;
+            align-items: center;
+        }
+
+        .welcome-text {
+            flex: 1.2;
+        }
+
+        .welcome-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+            color: #fff8f2;
+        }
+
+        .welcome-text p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #f3e4db;
+            margin-bottom: 24px;
+        }
+
+        .signature-line {
+            border-top: 1px solid #eacabb;
+            width: 80px;
+            margin: 20px 0 16px;
+        }
+
+        .welcome-quote {
+            font-style: italic;
+            font-weight: 400;
+            color: #ffefdf;
+            font-size: 1.1rem;
+        }
+
+        .welcome-image {
+            flex: 0.8;
+            background: #551a28;
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.5);
+            border: 1px solid #bc7f6d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vogue-emblem-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 2px solid #dbaa98;
+            object-fit: contain;
+            background: #f5ede4;
+            transition: transform 0.3s ease;
+        }
+
+        .vogue-emblem-image:hover {
+            transform: scale(1.02);
+        }
+
+        .icon-row {
+            margin: 12px 0 8px;
+        }
+
+        .icon-row i {
+            font-size: 2rem;
+            color: #ffddcc;
+            margin: 0 6px;
+        }
+
+        .welcome-image p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #ffefe7;
+            margin-top: 8px;
+        }
+
+        .categories-section {
+            margin: 64px 0 56px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            border-left: 4px solid #ffcdbb;
+            padding-left: 20px;
+            margin-bottom: 36px;
+            color: #fff6ef;
+        }
+
+        .category-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 210px;
+            background: #701e30;
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+            border: 1px solid #c48d7a;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #ffcfbc;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.4);
+            background: #842838;
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #ffe4d4;
+            margin-bottom: 20px;
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 12px;
+            color: #fffcf5;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: #f5e2d7;
+            margin-bottom: 20px;
+        }
+
+        .shop-link {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffeedd;
+            text-decoration: none;
+            border-bottom: 1px solid #ffb7a0;
+            transition: 0.2s;
+        }
+
+        .shop-link:hover {
+            color: #ffffff;
+            border-bottom-color: #fff0e6;
+        }
+
+        .vogue-spotlight {
+            margin: 48px 0 64px;
+            text-align: center;
+        }
+
+        .vogue-tag {
+            background: #40131f;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            color: #ffe7db;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            border: 1px solid #ca907b;
+        }
+
+        .vogue-message {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #ffe3d6;
+            letter-spacing: 0.5px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        footer {
+            border-top: 1px solid #c18c78;
+            margin-top: 60px;
+            padding: 40px 0 32px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #fee7dd;
+        }
+
+        .smile-tag {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #ffe6da;
+        }
+
+        .copyright {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- HOME button at top left -->
-    <a href="index.html" class="home-link">🏠 HOME</a>
-
-    <div class="gallery-header">
-        <h1>✨ Élan Atelier Gallery ✨</h1>
-        <!-- BACK TO HOME BUTTON -->
-        <a href="index.html" class="back-btn">← BACK TO HOME</a>
+<div class="container">
+    <!-- header with navigation -->
+    <div class="top-bar">
+        <div class="logo-area">
+            <h1>Élan Atelier</h1>
+            <p>Effortless elegance, tailored to you</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active-page">Home</a>
+            <!-- search bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
+                <button id="searchButton" class="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="vogue-badge">VOGUE FT.</div>
+        </div>
     </div>
 
-    <!-- 7-image grid -->
-    <div class="image-grid">
-        
-        <!-- Image 1 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&h=300&fit=crop" alt="Elegant dress">
-            <div class="caption">Timeless Silk Dress</div>
+    <!-- hero section -->
+    <div class="hero-section">
+        <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
+        <div class="hero-overlay">
+            <div class="hero-quote">
+                <p>What should I wear today?</p>
+                <h2>Have you tried Élan Atelier</h2>
+                <div class="attribution">
+                    “Your clothes maybe Chanel, Gucci, your shoes crocodile but baby you're never fully dressed without a smile” <br> — ANNIÉ
+                </div>
+            </div>
         </div>
-        
-        <!-- Image 2 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop" alt="Designer shoes">
-            <div class="caption">Crocodile Loafers</div>
-        </div>
-        
-        <!-- Image 3 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=300&fit=crop" alt="Leather handbag">
-            <div class="caption">Heritage Leather Bag</div>
-        </div>
-        
-        <!-- Image 4 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop" alt="Fashion outfit">
-            <div class="caption">Wine Red Blazer</div>
-        </div>
-        
-        <!-- Image 5 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1560769621-6ecf7387dde1?w=400&h=300&fit=crop" alt="Pearl accessories">
-            <div class="caption">Pearl Collection</div>
-        </div>
-        
-        <!-- Image 6 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&h=300&fit=crop" alt="Sunglasses">
-            <div class="caption">Signature Sunnies</div>
-        </div>
-        
-        <!-- Image 7 -->
-        <div class="grid-item">
-            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop" alt="Style inspiration">
-            <div class="caption">Effortless Elegance</div>
-        </div>
-        
     </div>
-    
-    <div class="gallery-footer">
-        <p>© 2025 Élan Atelier — Timeless elegance captured in every frame</p>
+
+    <!-- welcome section -->
+    <div class="welcome-grid">
+        <div class="welcome-text">
+            <h3>For the ones who dress with intention.</h3>
+            <p>Welcome to Élan Atelier — a space created for teenagers that see fashion as more than just trends. This is for those who prefer timeless elegance over streetwear and who express themselves through refined, polished style. Élan Atelier celebrates individuality, confidence and the art of dressing with intention.</p>
+            <div class="signature-line"></div>
+            <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
+        </div>
+        
+        <div class="welcome-image">
+            <img class="vogue-emblem-image" src="Vogue-Emblem.png" alt="Vogue Emblem" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="icon-row">
+                <i class="fas fa-gem"></i>
+                <i class="fas fa-vest"></i>
+                <i class="fas fa-shoe-prints"></i>
+            </div>
+            <p>curated with purpose · deep wine atelier</p>
+        </div>
     </div>
+
+    <!-- Categories Section -->
+    <div class="categories-section">
+        <div class="section-title">Edit by category</div>
+        <div class="category-cards">
+            <div class="card">
+                <i class="fas fa-tshirt"></i>
+                <h4>Clothing</h4>
+                <p>Silhouettes that speak softly. Tailored blazers, fluid dresses, heirloom-quality knits.</p>
+                <a href="#" class="shop-link">EXPLORE →</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-shoe-prints"></i>
+                <h4>Shoes</h4>
+                <p>Crocodile textures, sculptural heels, and loafers that complete every refined step.</p>
+                <a href="#" class="shop-link">EXPLORE →</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-glasses"></i>
+                <h4>Accessories</h4>
+                <p>Silk scarves, subtle jewels, leather goods — the final touch of intention.</p>
+                <a href="#" class="shop-link">EXPLORE →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- VOGUE FT. EDITORIAL -->
+    <div class="vogue-spotlight">
+        <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
+        <div class="vogue-message">
+            Where timeless meets tomorrow — a curation for the modern teenager.
+        </div>
+    </div>
+
+    <footer>
+        <div class="smile-tag">
+            <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
+        </div>
+        <div class="copyright">
+            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    function performSearch() {
+        const searchQuery = searchInput.value.trim();
+        if (searchQuery !== '') {
+            const encodedQuery = encodeURIComponent(searchQuery);
+            window.location.href = `search.html?q=${encodedQuery}`;
+        } else {
+            alert('Please type something to search');
+        }
+    }
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
 
 </body>
 </html>
