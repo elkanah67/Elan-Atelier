@@ -36,23 +36,27 @@
             color: #fff2ea;
         }
         
-        /* Back to Home button */
+        /* BACK TO HOME BUTTON - FULLY CLICKABLE! */
+        /* When clicked, it takes you back to index.html (the main home page) */
         .back-btn {
             display: inline-block;
             background-color: #c48976;
             color: #4f1622;
             text-decoration: none;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 40px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             margin-top: 10px;
+            border: none;
+            cursor: pointer;
         }
         
         .back-btn:hover {
             background-color: #ffddcc;
-            transform: scale(1.02);
+            transform: scale(1.05);
+            color: #4f1622;
         }
         
         /* SIMPLE GRID FOR 7 PICTURES */
@@ -103,6 +107,27 @@
             font-size: 0.8rem;
         }
         
+        /* HOME LINK in navigation bar */
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #c48976;
+            color: #4f1622;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .home-link:hover {
+            background-color: #ffddcc;
+            transform: scale(1.02);
+        }
+        
         @media (max-width: 600px) {
             .image-grid {
                 gap: 15px;
@@ -113,14 +138,24 @@
             .gallery-header h1 {
                 font-size: 1.8rem;
             }
+            .home-link {
+                top: 10px;
+                left: 10px;
+                padding: 6px 15px;
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- EXTRA HOME BUTTON - fixed at top left for easy access -->
+    <a href="index.html" class="home-link">🏠 HOME</a>
+
     <div class="gallery-header">
         <h1>✨ Élan Atelier Gallery ✨</h1>
-        <a href="index.html" class="back-btn">← Back to Home</a>
+        <!-- BACK TO HOME BUTTON - CLICKING THIS TAKES YOU BACK TO index.html (HOME PAGE) -->
+        <a href="index.html" class="back-btn">← BACK TO HOME</a>
     </div>
 
     <!-- 7-image grid -->
