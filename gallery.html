@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Élan Atelier</title>
+    <style>
+        /* Simple CSS for the gallery page */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #6a1e2c;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f6ede8;
+            min-height: 100vh;
+        }
+        
+        /* Header section with back button */
+        .gallery-header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            border-bottom: 2px solid #c48976;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #fff2ea;
+        }
+        
+        /* BACK TO HOME BUTTON - FULLY CLICKABLE! */
+        /* When clicked, it takes you back to index.html (the main home page) */
+        .back-btn {
+            display: inline-block;
+            background-color: #c48976;
+            color: #4f1622;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            background-color: #ffddcc;
+            transform: scale(1.05);
+            color: #4f1622;
+        }
+        
+        /* SIMPLE GRID FOR 7 PICTURES */
+        .image-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .grid-item {
+            background-color: #551a28;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #bc7f6d;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .caption {
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #ffefe7;
+            background-color: #4a1522;
+        }
+        
+        .gallery-footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #c18c78;
+            color: #dbaa98;
+            font-size: 0.8rem;
+        }
+        
+        /* HOME LINK in navigation bar */
+        .home-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #c48976;
+            color: #4f1622;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .home-link:hover {
+            background-color: #ffddcc;
+            transform: scale(1.02);
+        }
+        
+        @media (max-width: 600px) {
+            .image-grid {
+                gap: 15px;
+            }
+            .grid-item img {
+                height: 180px;
+            }
+            .gallery-header h1 {
+                font-size: 1.8rem;
+            }
+            .home-link {
+                top: 10px;
+                left: 10px;
+                padding: 6px 15px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- EXTRA HOME BUTTON - fixed at top left for easy access -->
+    <a href="index.html" class="home-link">🏠 HOME</a>
+
+    <div class="gallery-header">
+        <h1>✨ Élan Atelier Gallery ✨</h1>
+        <!-- BACK TO HOME BUTTON - CLICKING THIS TAKES YOU BACK TO index.html (HOME PAGE) -->
+        <a href="index.html" class="back-btn">← BACK TO HOME</a>
+    </div>
+
+    <!-- 7-image grid -->
+    <div class="image-grid">
+        
+        <!-- Image 1 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&h=300&fit=crop" alt="Elegant dress">
+            <div class="caption">Timeless Silk Dress</div>
+        </div>
+        
+        <!-- Image 2 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop" alt="Designer shoes">
+            <div class="caption">Crocodile Loafers</div>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=300&fit=crop" alt="Leather handbag">
+            <div class="caption">Heritage Leather Bag</div>
+        </div>
+        
+        <!-- Image 4 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=300&fit=crop" alt="Fashion outfit">
+            <div class="caption">Wine Red Blazer</div>
+        </div>
+        
+        <!-- Image 5 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1560769621-6ecf7387dde1?w=400&h=300&fit=crop" alt="Pearl accessories">
+            <div class="caption">Pearl Collection</div>
+        </div>
+        
+        <!-- Image 6 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&h=300&fit=crop" alt="Sunglasses">
+            <div class="caption">Signature Sunnies</div>
+        </div>
+        
+        <!-- Image 7 -->
+        <div class="grid-item">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop" alt="Style inspiration">
+            <div class="caption">Effortless Elegance</div>
+        </div>
+        
+    </div>
+    
+    <div class="gallery-footer">
+        <p>© 2025 Élan Atelier — Timeless elegance captured in every frame</p>
+    </div>
+
+</body>
+</html>
