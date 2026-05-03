@@ -464,58 +464,91 @@
             margin: 0 auto;
         }
 
-        /* How to Pick an Outfit Section - Step by Step */
+        /* ========== VIBRANT OUTFIT GUIDE SECTION - Teen Focused ========== */
         .outfit-guide {
             margin: 70px 0 60px;
-            background: linear-gradient(135deg, #3d121f 0%, #2a0d16 100%);
+            background: linear-gradient(135deg, #2d0d15 0%, #4a1a28 50%, #2d0d15 100%);
             border-radius: 48px;
             padding: 50px 40px;
-            border: 1px solid #c48976;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid #ffb7a0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 200, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background glow effect */
+        .outfit-guide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 180, 150, 0.08) 0%, transparent 70%);
+            animation: subtleGlow 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
         }
 
         .guide-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
             text-align: center;
-            margin-bottom: 10px;
-            color: #ffefe7;
-            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .guide-subtitle {
             text-align: center;
             font-size: 0.9rem;
-            color: #dbaa98;
+            color: #ffcfbc;
             margin-bottom: 45px;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            border-bottom: 1px dashed #c48976;
+            background: rgba(255, 220, 200, 0.15);
             display: inline-block;
             width: auto;
             margin-left: auto;
             margin-right: auto;
-            padding-bottom: 10px;
+            padding: 8px 24px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            position: relative;
+            z-index: 1;
         }
 
         .steps-container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .step-item {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 24px;
-            padding: 22px 30px;
+            background: linear-gradient(135deg, rgba(255, 220, 200, 0.08) 0%, rgba(255, 180, 150, 0.05) 100%);
+            border-radius: 28px;
+            padding: 20px 28px;
             transition: all 0.3s ease;
-            border-left: 4px solid #c48976;
+            border-left: 4px solid #ffb7a0;
+            backdrop-filter: blur(2px);
+            cursor: pointer;
         }
 
         .step-item:hover {
-            background: rgba(0, 0, 0, 0.45);
-            transform: translateX(8px);
+            background: linear-gradient(135deg, rgba(255, 220, 200, 0.2) 0%, rgba(255, 180, 150, 0.12) 100%);
+            transform: translateX(10px);
+            border-left-color: #ffddcc;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
 
         .step-header {
@@ -523,68 +556,107 @@
             align-items: baseline;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .step-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
-            color: #c48976;
+            color: #ffcfbc;
             letter-spacing: 1px;
+            background: rgba(255, 200, 180, 0.2);
+            padding: 4px 12px;
+            border-radius: 40px;
         }
 
         .step-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 600;
-            color: #ffefe7;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         .step-description {
             font-size: 0.9rem;
-            line-height: 1.6;
-            color: #e6d5ca;
-            padding-left: 10px;
-            border-left: 2px solid rgba(196, 137, 118, 0.4);
+            line-height: 1.5;
+            color: #f0d5c8;
+            padding-left: 12px;
+            border-left: 2px solid rgba(255, 200, 180, 0.4);
             margin-top: 8px;
+            font-style: italic;
         }
 
         .step-list {
             list-style: none;
             margin-top: 12px;
-            padding-left: 10px;
+            padding-left: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .step-list li {
-            font-size: 0.9rem;
-            color: #e6d5ca;
-            padding: 5px 0 5px 20px;
-            position: relative;
+            font-size: 0.85rem;
+            color: #f0d5c8;
+            padding: 6px 14px;
+            background: rgba(255, 220, 200, 0.08);
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            display: inline-block;
         }
 
-        .step-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: #c48976;
-            font-size: 0.8rem;
+        .step-list li:hover {
+            background: rgba(255, 200, 180, 0.25);
+            transform: scale(1.02);
+            color: #ffffff;
         }
 
+        /* Special styling for the vibe options to make them pop */
+        .step-item:first-child .step-list li {
+            background: rgba(255, 200, 180, 0.15);
+            font-weight: 500;
+            border: 0.5px solid rgba(255, 200, 180, 0.3);
+        }
+
+        .step-item:first-child .step-list li:hover {
+            background: #c48976;
+            color: #2d0d15;
+            border-color: #c48976;
+        }
+
+        /* Final cheat code - vibrant highlight */
         .final-cheatcode {
-            background: rgba(196, 137, 118, 0.15);
-            border-radius: 20px;
-            padding: 18px 25px;
-            margin-top: 15px;
+            background: linear-gradient(135deg, #c48976 0%, #a86b58 100%);
+            border-radius: 28px;
+            padding: 22px 28px;
+            margin-top: 20px;
             text-align: center;
-            border: 1px solid #c48976;
+            border: 1px solid #ffddcc;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .final-cheatcode:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
         .final-cheatcode p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-style: italic;
-            color: #ffefe7;
+            color: #2d0d15;
             margin: 0;
+            font-weight: 600;
+            text-shadow: none;
+        }
+
+        .final-cheatcode p strong {
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 8px;
+            color: #1e0a10;
         }
 
         @media (max-width: 780px) {
@@ -592,13 +664,20 @@
                 padding: 30px 20px;
             }
             .step-item {
-                padding: 18px 20px;
+                padding: 16px 20px;
             }
             .step-name {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .guide-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            .step-list li {
+                font-size: 0.75rem;
+                padding: 4px 10px;
+            }
+            .step-list {
+                gap: 8px;
             }
         }
 
@@ -829,7 +908,7 @@
         </div>
     </div>
 
-    <!-- HOW TO PICK AN OUTFIT SECTION - STEP BY STEP -->
+    <!-- VIBRANT OUTFIT GUIDE SECTION - Step by Step (Teen Focused) -->
     <div class="outfit-guide">
         <div class="guide-title">How to Pick an Outfit</div>
         <div style="text-align: center;">
@@ -840,23 +919,23 @@
             <!-- STEP 1 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 1:</span>
+                    <span class="step-number">STEP 1</span>
                     <span class="step-name">Pick your VIBE (this is your main character energy)</span>
                 </div>
                 <div class="step-description">What are you going for today?</div>
                 <ul class="step-list">
-                    <li>"Rich CEO in disguise"</li>
-                    <li>"Silent luxury, don't talk to me"</li>
-                    <li>"Main character at a rooftop party"</li>
-                    <li>"Soft glam but still expensive"</li>
-                    <li>"Dangerously well-dressed"</li>
+                    <li>Rich CEO in disguise</li>
+                    <li>Silent luxury, don't talk to me</li>
+                    <li>Main character at a rooftop party</li>
+                    <li>Soft glam but still expensive</li>
+                    <li>Dangerously well-dressed</li>
                 </ul>
             </div>
 
             <!-- STEP 2 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 2:</span>
+                    <span class="step-number">STEP 2</span>
                     <span class="step-name">Choose your BASE outfit</span>
                 </div>
                 <div class="step-description">This is your foundation—no chaos yet. Pick one:</div>
@@ -865,14 +944,14 @@
                     <li>Bodycon dress / sleek midi dress</li>
                     <li>Oversized blazer + shorts or mini skirt</li>
                     <li>Clean co-ord set (matching top + bottom)</li>
-                    <li>Simple fitted jeans + elevated top (yes, jeans can be fancy if done right)</li>
+                    <li>Simple fitted jeans + elevated top</li>
                 </ul>
             </div>
 
             <!-- STEP 3 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 3:</span>
+                    <span class="step-number">STEP 3</span>
                     <span class="step-name">Add the "I have taste" layer</span>
                 </div>
                 <div class="step-description">Now we upgrade it:</div>
@@ -887,7 +966,7 @@
             <!-- STEP 4 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 4:</span>
+                    <span class="step-number">STEP 4</span>
                     <span class="step-name">Choose your color mood</span>
                 </div>
                 <div class="step-description">Don't overthink—just pick:</div>
@@ -902,7 +981,7 @@
             <!-- STEP 5 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 5:</span>
+                    <span class="step-number">STEP 5</span>
                     <span class="step-name">Shoes = personality reveal</span>
                 </div>
                 <div class="step-description">What are you stepping out in?</div>
@@ -917,7 +996,7 @@
             <!-- STEP 6 -->
             <div class="step-item">
                 <div class="step-header">
-                    <span class="step-number">STEP 6:</span>
+                    <span class="step-number">STEP 6</span>
                     <span class="step-name">Accessories (aka final boss items)</span>
                 </div>
                 <div class="step-description">Pick wisely—don't overstack:</div>
@@ -929,9 +1008,9 @@
                 </ul>
             </div>
 
-            <!-- FINAL STEP - THE CHEAT CODE -->
+            <!-- FINAL STEP - THE CHEAT CODE (Vibrant Highlight) -->
             <div class="final-cheatcode">
-                <p><strong>FINAL STEP: The cheat code</strong><br>
+                <p><strong>FINAL STEP: The cheat code</strong>
                 Put it on like you already own the place.<br>
                 If it feels slightly "too much," you're probably doing it right.</p>
             </div>
@@ -941,49 +1020,4 @@
     <!-- VOGUE FT. EDITORIAL -->
     <div class="vogue-spotlight">
         <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
-        <div class="vogue-message">
-            Where timeless meets tomorrow — a curation for the modern teenager.
-        </div>
-    </div>
-
-    <!-- FANCY MERYL STREEP QUOTE SECTION -->
-    <div class="fancy-quote">
-        <div class="quote-text">That's all.</div>
-        <div class="quote-author">Meryl Streep</div>
-        <div class="divider"></div>
-    </div>
-
-    <footer>
-        <div class="smile-tag">
-            <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
-        </div>
-        <div class="copyright">
-            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
-        </div>
-    </footer>
-</div>
-
-<script>
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-
-    function performSearch() {
-        const searchQuery = searchInput.value.trim();
-        if (searchQuery !== '') {
-            const encodedQuery = encodeURIComponent(searchQuery);
-            window.location.href = `search.html?q=${encodedQuery}`;
-        } else {
-            alert('Please type something to search');
-        }
-    }
-
-    searchButton.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            performSearch();
-        }
-    });
-</script>
-
-</body>
-</html>
+       
