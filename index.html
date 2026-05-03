@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Élan Atelier | Home - Timeless Elegance</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -394,7 +394,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            min-height: 320px;
+            min-height: 380px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -409,7 +409,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 0;
         }
 
@@ -449,16 +449,19 @@
             font-size: 1.5rem;
             font-weight: 500;
             font-family: 'Cormorant Garamond', serif;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             color: #fffcf5;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .card p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
             color: #f5e2d7;
             margin-bottom: 0;
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            max-width: 280px;
+            margin: 0 auto;
         }
 
         .vogue-spotlight {
@@ -488,9 +491,85 @@
             line-height: 1.5;
         }
 
+        /* Fancy Meryl Streep Quote Section */
+        .fancy-quote {
+            text-align: center;
+            margin: 80px 0 60px;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #4a1522 0%, #2d0d15 100%);
+            border-radius: 60px;
+            border: 1px solid #dbaa98;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fancy-quote::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15rem;
+            position: absolute;
+            left: 20px;
+            top: -40px;
+            opacity: 0.08;
+            color: #ffddcc;
+            pointer-events: none;
+        }
+
+        .fancy-quote::after {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15rem;
+            position: absolute;
+            right: 20px;
+            bottom: -80px;
+            opacity: 0.08;
+            color: #ffddcc;
+            pointer-events: none;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            font-style: italic;
+            color: #fff2ea;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .quote-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #dbaa98;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author::before {
+            content: "— ";
+            letter-spacing: 0;
+        }
+
+        /* Decorative divider */
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #dbaa98, transparent);
+            margin: 20px auto 0;
+        }
+
         footer {
             border-top: 1px solid #c18c78;
-            margin-top: 60px;
+            margin-top: 40px;
             padding: 40px 0 32px;
             text-align: center;
             font-size: 0.8rem;
@@ -508,6 +587,26 @@
 
         .copyright {
             margin-top: 20px;
+        }
+
+        @media (max-width: 780px) {
+            .quote-text {
+                font-size: 1.5rem;
+            }
+            .fancy-quote {
+                padding: 35px 20px;
+                margin: 50px 0 40px;
+            }
+            .fancy-quote::before,
+            .fancy-quote::after {
+                font-size: 8rem;
+            }
+            .card p {
+                font-size: 0.8rem;
+            }
+            .card {
+                min-height: 340px;
+            }
         }
     </style>
 </head>
@@ -568,29 +667,29 @@
         </div>
     </div>
 
-    <!-- Categories Section with Background Images - EXPLORE buttons REMOVED -->
+    <!-- Categories Section with NEW fancy descriptions -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
-            <!-- Clothing card - NO EXPLORE button -->
+            <!-- Clothing card - NEW DESCRIPTION -->
             <div class="card card-clothing">
                 <i class="fas fa-tshirt"></i>
                 <h4>Clothing</h4>
-                <p>Silhouettes that speak softly. Tailored blazers, fluid dresses, heirloom-quality knits.</p>
+                <p>Clothing isn't merely worn—it becomes a statement of quiet extravagance, where every fold and fabric speaks a language of effortless elegance.</p>
             </div>
             
-            <!-- Shoes card - NO EXPLORE button -->
+            <!-- Shoes card - NEW DESCRIPTION -->
             <div class="card card-shoes">
                 <i class="fas fa-shoe-prints"></i>
                 <h4>Shoes</h4>
-                <p>Crocodile textures, sculptural heels, and loafers that complete every refined step.</p>
+                <p>Shoes aren't just worn—they carry a quiet extravagance, where every step echoes with effortless elegance and intention.</p>
             </div>
             
-            <!-- Accessories card - NO EXPLORE button -->
+            <!-- Accessories card - NEW DESCRIPTION -->
             <div class="card card-accessories">
                 <i class="fas fa-glasses"></i>
                 <h4>Accessories</h4>
-                <p>Silk scarves, subtle jewels, leather goods — the final touch of intention.</p>
+                <p>Accessories aren't merely added—they refine the silhouette, a subtle extravagance where every detail glimmers with quiet intention and grace.</p>
             </div>
         </div>
     </div>
@@ -601,6 +700,13 @@
         <div class="vogue-message">
             Where timeless meets tomorrow — a curation for the modern teenager.
         </div>
+    </div>
+
+    <!-- FANCY MERYL STREEP QUOTE SECTION -->
+    <div class="fancy-quote">
+        <div class="quote-text">That's all.</div>
+        <div class="quote-author">Meryl Streep</div>
+        <div class="divider"></div>
     </div>
 
     <footer>
