@@ -77,7 +77,6 @@
             color: #ffddcc;
         }
 
-        /* Active/Current page indicator */
         .active-page {
             color: #ffddcc !important;
             border-bottom: 2px solid #ffddcc;
@@ -307,7 +306,6 @@
             font-size: 1.1rem;
         }
 
-        /* Welcome image box */
         .welcome-image {
             flex: 0.8;
             background: #551a28;
@@ -357,7 +355,7 @@
             margin-top: 8px;
         }
 
-        /* Categories Section with Background Images */
+        /* Categories Section */
         .categories-section {
             margin: 64px 0 56px;
         }
@@ -379,7 +377,6 @@
             justify-content: space-between;
         }
 
-        /* Card styles with background images */
         .card {
             flex: 1;
             min-width: 210px;
@@ -401,7 +398,6 @@
             justify-content: center;
         }
 
-        /* Dark overlay to make text readable */
         .card::before {
             content: '';
             position: absolute;
@@ -418,20 +414,9 @@
             z-index: 1;
         }
 
-        /* Clothing card background - IMG_0166.jpeg */
-        .card-clothing {
-            background-image: url('IMG_0166.jpeg');
-        }
-
-        /* Shoes card background - IMG_0167.jpeg */
-        .card-shoes {
-            background-image: url('IMG_0167.jpeg');
-        }
-
-        /* Accessories card background - IMG_0168.jpeg */
-        .card-accessories {
-            background-image: url('IMG_0168.jpeg');
-        }
+        .card-clothing { background-image: url('IMG_0166.jpeg'); }
+        .card-shoes { background-image: url('IMG_0167.jpeg'); }
+        .card-accessories { background-image: url('IMG_0168.jpeg'); }
 
         .card:hover {
             transform: translateY(-6px);
@@ -464,7 +449,7 @@
             margin: 0 auto;
         }
 
-        /* ========== VIBRANT OUTFIT GUIDE SECTION - Teen Focused ========== */
+        /* ========== INTERACTIVE OUTFIT GUIDE SECTION ========== */
         .outfit-guide {
             margin: 70px 0 60px;
             background: linear-gradient(135deg, #2d0d15 0%, #4a1a28 50%, #2d0d15 100%);
@@ -476,7 +461,6 @@
             overflow: hidden;
         }
 
-        /* Animated background glow effect */
         .outfit-guide::before {
             content: '';
             position: absolute;
@@ -541,7 +525,6 @@
             transition: all 0.3s ease;
             border-left: 4px solid #ffb7a0;
             backdrop-filter: blur(2px);
-            cursor: pointer;
         }
 
         .step-item:hover {
@@ -588,6 +571,7 @@
             font-style: italic;
         }
 
+        /* CLICKABLE OPTIONS STYLES */
         .step-list {
             list-style: none;
             margin-top: 12px;
@@ -600,33 +584,37 @@
         .step-list li {
             font-size: 0.85rem;
             color: #f0d5c8;
-            padding: 6px 14px;
-            background: rgba(255, 220, 200, 0.08);
+            padding: 8px 18px;
+            background: rgba(255, 220, 200, 0.1);
             border-radius: 40px;
             transition: all 0.2s ease;
             display: inline-block;
+            cursor: pointer;
+            border: 1px solid transparent;
         }
 
         .step-list li:hover {
-            background: rgba(255, 200, 180, 0.25);
+            background: rgba(255, 200, 180, 0.3);
             transform: scale(1.02);
             color: #ffffff;
         }
 
-        /* Special styling for the vibe options to make them pop */
-        .step-item:first-child .step-list li {
-            background: rgba(255, 200, 180, 0.15);
-            font-weight: 500;
-            border: 0.5px solid rgba(255, 200, 180, 0.3);
-        }
-
-        .step-item:first-child .step-list li:hover {
+        /* SELECTED/HIGHLIGHTED STATE - stays clicked until another option is chosen */
+        .step-list li.selected {
             background: #c48976;
             color: #2d0d15;
-            border-color: #c48976;
+            border-color: #ffddcc;
+            box-shadow: 0 0 12px rgba(196, 137, 118, 0.5);
+            font-weight: 600;
         }
 
-        /* Final cheat code - vibrant highlight */
+        /* Vibe options special styling */
+        .step-item:first-child .step-list li.selected {
+            background: #c48976;
+            color: #2d0d15;
+        }
+
+        /* Final cheat code */
         .final-cheatcode {
             background: linear-gradient(135deg, #c48976 0%, #a86b58 100%);
             border-radius: 28px;
@@ -636,6 +624,7 @@
             border: 1px solid #ffddcc;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .final-cheatcode:hover {
@@ -659,6 +648,52 @@
             color: #1e0a10;
         }
 
+        /* Selected outfit summary section */
+        .outfit-summary {
+            margin-top: 30px;
+            padding: 20px 28px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 28px;
+            border: 1px dashed #ffb7a0;
+            text-align: center;
+        }
+
+        .outfit-summary h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: #ffcfbc;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            font-size: 0.9rem;
+            color: #f0d5c8;
+            line-height: 1.6;
+        }
+
+        .summary-placeholder {
+            color: #dbaa98;
+            font-style: italic;
+        }
+
+        .reset-btn {
+            margin-top: 15px;
+            background: rgba(255, 200, 180, 0.2);
+            border: 1px solid #c48976;
+            padding: 6px 20px;
+            border-radius: 40px;
+            color: #ffcfbc;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .reset-btn:hover {
+            background: #c48976;
+            color: #2d0d15;
+        }
+
         @media (max-width: 780px) {
             .outfit-guide {
                 padding: 30px 20px;
@@ -674,10 +709,7 @@
             }
             .step-list li {
                 font-size: 0.75rem;
-                padding: 4px 10px;
-            }
-            .step-list {
-                gap: 8px;
+                padding: 5px 12px;
             }
         }
 
@@ -708,7 +740,7 @@
             line-height: 1.5;
         }
 
-        /* Fancy Meryl Streep Quote Section */
+        /* Meryl Streep Quote */
         .fancy-quote {
             text-align: center;
             margin: 80px 0 60px;
@@ -776,7 +808,6 @@
             letter-spacing: 0;
         }
 
-        /* Decorative divider */
         .divider {
             width: 80px;
             height: 2px;
@@ -818,19 +849,12 @@
             .fancy-quote::after {
                 font-size: 8rem;
             }
-            .card p {
-                font-size: 0.8rem;
-            }
-            .card {
-                min-height: 340px;
-            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- header with navigation -->
     <div class="top-bar">
         <div class="logo-area">
             <h1>Élan Atelier</h1>
@@ -838,7 +862,6 @@
         </div>
         <div class="nav-links">
             <a href="index.html" class="active-page">Home</a>
-            <!-- search bar -->
             <div class="search-container">
                 <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
                 <button id="searchButton" class="search-button" aria-label="Search">
@@ -849,7 +872,6 @@
         </div>
     </div>
 
-    <!-- hero section -->
     <div class="hero-section">
         <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
         <div class="hero-overlay">
@@ -863,7 +885,6 @@
         </div>
     </div>
 
-    <!-- welcome section -->
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
@@ -871,8 +892,6 @@
             <div class="signature-line"></div>
             <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
         </div>
-        
-        <!-- IMG_0169.jpeg -->
         <div class="welcome-image">
             <img src="IMG_0169.jpeg" alt="Élan Atelier Style" onerror="this.onerror=null; this.style.display='none';">
             <div class="icon-row">
@@ -884,7 +903,6 @@
         </div>
     </div>
 
-    <!-- Categories Section -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -893,13 +911,11 @@
                 <h4>Clothing</h4>
                 <p>Clothing isn't merely worn—it becomes a statement of quiet extravagance, where every fold and fabric speaks a language of effortless elegance.</p>
             </div>
-            
             <div class="card card-shoes">
                 <i class="fas fa-shoe-prints"></i>
                 <h4>Shoes</h4>
                 <p>Shoes aren't just worn—they carry a quiet extravagance, where every step echoes with effortless elegance and intention.</p>
             </div>
-            
             <div class="card card-accessories">
                 <i class="fas fa-glasses"></i>
                 <h4>Accessories</h4>
@@ -908,116 +924,70 @@
         </div>
     </div>
 
-    <!-- VIBRANT OUTFIT GUIDE SECTION - Step by Step (Teen Focused) -->
+    <!-- INTERACTIVE OUTFIT GUIDE SECTION - Clickable Options -->
     <div class="outfit-guide">
         <div class="guide-title">How to Pick an Outfit</div>
         <div style="text-align: center;">
             <div class="guide-subtitle">Step by Step Guide</div>
         </div>
         
-        <div class="steps-container">
-            <!-- STEP 1 -->
-            <div class="step-item">
+        <div class="steps-container" id="stepsContainer">
+            <!-- STEP 1 - VIBE -->
+            <div class="step-item" data-step="1">
                 <div class="step-header">
                     <span class="step-number">STEP 1</span>
                     <span class="step-name">Pick your VIBE (this is your main character energy)</span>
                 </div>
                 <div class="step-description">What are you going for today?</div>
-                <ul class="step-list">
-                    <li>Rich CEO in disguise</li>
-                    <li>Silent luxury, don't talk to me</li>
-                    <li>Main character at a rooftop party</li>
-                    <li>Soft glam but still expensive</li>
-                    <li>Dangerously well-dressed</li>
+                <ul class="step-list" data-step-id="vibe">
+                    <li data-value="Rich CEO in disguise">Rich CEO in disguise</li>
+                    <li data-value="Silent luxury, don't talk to me">Silent luxury, don't talk to me</li>
+                    <li data-value="Main character at a rooftop party">Main character at a rooftop party</li>
+                    <li data-value="Soft glam but still expensive">Soft glam but still expensive</li>
+                    <li data-value="Dangerously well-dressed">Dangerously well-dressed</li>
                 </ul>
             </div>
 
-            <!-- STEP 2 -->
-            <div class="step-item">
+            <!-- STEP 2 - BASE OUTFIT -->
+            <div class="step-item" data-step="2">
                 <div class="step-header">
                     <span class="step-number">STEP 2</span>
                     <span class="step-name">Choose your BASE outfit</span>
                 </div>
                 <div class="step-description">This is your foundation—no chaos yet. Pick one:</div>
-                <ul class="step-list">
-                    <li>Sharp trousers + fitted top</li>
-                    <li>Bodycon dress / sleek midi dress</li>
-                    <li>Oversized blazer + shorts or mini skirt</li>
-                    <li>Clean co-ord set (matching top + bottom)</li>
-                    <li>Simple fitted jeans + elevated top</li>
+                <ul class="step-list" data-step-id="base">
+                    <li data-value="Sharp trousers + fitted top">Sharp trousers + fitted top</li>
+                    <li data-value="Bodycon dress / sleek midi dress">Bodycon dress / sleek midi dress</li>
+                    <li data-value="Oversized blazer + shorts or mini skirt">Oversized blazer + shorts or mini skirt</li>
+                    <li data-value="Clean co-ord set (matching top + bottom)">Clean co-ord set (matching top + bottom)</li>
+                    <li data-value="Simple fitted jeans + elevated top">Simple fitted jeans + elevated top</li>
                 </ul>
             </div>
 
-            <!-- STEP 3 -->
-            <div class="step-item">
+            <!-- STEP 3 - LAYER -->
+            <div class="step-item" data-step="3">
                 <div class="step-header">
                     <span class="step-number">STEP 3</span>
                     <span class="step-name">Add the "I have taste" layer</span>
                 </div>
                 <div class="step-description">Now we upgrade it:</div>
-                <ul class="step-list">
-                    <li>Blazer (instant power boost)</li>
-                    <li>Trench coat (mysterious + expensive vibes)</li>
-                    <li>Knit cardigan (soft luxury)</li>
-                    <li>Leather jacket (main character energy unlocked)</li>
+                <ul class="step-list" data-step-id="layer">
+                    <li data-value="Blazer (instant power boost)">Blazer (instant power boost)</li>
+                    <li data-value="Trench coat (mysterious + expensive vibes)">Trench coat (mysterious + expensive vibes)</li>
+                    <li data-value="Knit cardigan (soft luxury)">Knit cardigan (soft luxury)</li>
+                    <li data-value="Leather jacket (main character energy unlocked)">Leather jacket (main character energy unlocked)</li>
                 </ul>
             </div>
 
-            <!-- STEP 4 -->
-            <div class="step-item">
+            <!-- STEP 4 - COLOR MOOD -->
+            <div class="step-item" data-step="4">
                 <div class="step-header">
                     <span class="step-number">STEP 4</span>
                     <span class="step-name">Choose your color mood</span>
                 </div>
                 <div class="step-description">Don't overthink—just pick:</div>
-                <ul class="step-list">
-                    <li>Black & white (timeless elite)</li>
-                    <li>Neutrals (quiet luxury)</li>
-                    <li>Deep tones (rich energy)</li>
-                    <li>One pop color (for drama)</li>
-                </ul>
-            </div>
-
-            <!-- STEP 5 -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 5</span>
-                    <span class="step-name">Shoes = personality reveal</span>
-                </div>
-                <div class="step-description">What are you stepping out in?</div>
-                <ul class="step-list">
-                    <li>Heels (power walk mode activated)</li>
-                    <li>Loafers (rich student energy)</li>
-                    <li>Clean sneakers (effortless cool)</li>
-                    <li>Boots (don't mess with me vibe)</li>
-                </ul>
-            </div>
-
-            <!-- STEP 6 -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 6</span>
-                    <span class="step-name">Accessories (aka final boss items)</span>
-                </div>
-                <div class="step-description">Pick wisely—don't overstack:</div>
-                <ul class="step-list">
-                    <li>Small bag or clutch</li>
-                    <li>Watch or bracelet</li>
-                    <li>Earrings or chain</li>
-                    <li>Sunglasses (instant upgrade)</li>
-                </ul>
-            </div>
-
-            <!-- FINAL STEP - THE CHEAT CODE (Vibrant Highlight) -->
-            <div class="final-cheatcode">
-                <p><strong>FINAL STEP: The cheat code</strong>
-                Put it on like you already own the place.<br>
-                If it feels slightly "too much," you're probably doing it right.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- VOGUE FT. EDITORIAL -->
-    <div class="vogue-spotlight">
-        <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
-       
+                <ul class="step-list" data-step-id="color">
+                    <li data-value="Black & white (timeless elite)">Black & white (timeless elite)</li>
+                    <li data-value="Neutrals (quiet luxury)">Neutrals (quiet luxury)</li>
+                    <li data-value="Deep tones (rich energy)">Deep tones (rich energy)</li>
+                    <li data-value="One pop color (for drama
