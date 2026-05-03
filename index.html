@@ -148,12 +148,8 @@
         }
 
         @media (max-width: 780px) {
-            .search-input {
-                width: 120px;
-            }
-            .nav-links {
-                gap: 16px;
-            }
+            .search-input { width: 120px; }
+            .nav-links { gap: 16px; }
         }
 
         /* hero section */
@@ -239,30 +235,13 @@
         }
 
         @media (max-width: 780px) {
-            .hero-overlay {
-                padding: 48px 20px;
-                min-height: 400px;
-            }
-            .hero-quote h2 {
-                font-size: 2rem;
-            }
-            .hero-quote p:first-child {
-                font-size: 0.9rem;
-                letter-spacing: 3px;
-            }
-            .hero-section {
-                min-height: 400px;
-            }
-            .container {
-                padding: 0 20px;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
+            .hero-overlay { padding: 48px 20px; min-height: 400px; }
+            .hero-quote h2 { font-size: 2rem; }
+            .hero-quote p:first-child { font-size: 0.9rem; letter-spacing: 3px; }
+            .hero-section { min-height: 400px; }
+            .container { padding: 0 20px; }
+            .top-bar { flex-direction: column; gap: 16px; }
+            .nav-links { gap: 20px; }
         }
 
         .welcome-grid {
@@ -571,7 +550,7 @@
             font-style: italic;
         }
 
-        /* CLICKABLE OPTIONS STYLES */
+        /* CLICKABLE OPTIONS - with selected/highlighted state */
         .step-list {
             list-style: none;
             margin-top: 12px;
@@ -608,12 +587,6 @@
             font-weight: 600;
         }
 
-        /* Vibe options special styling */
-        .step-item:first-child .step-list li.selected {
-            background: #c48976;
-            color: #2d0d15;
-        }
-
         /* Final cheat code */
         .final-cheatcode {
             background: linear-gradient(135deg, #c48976 0%, #a86b58 100%);
@@ -624,7 +597,6 @@
             border: 1px solid #ffddcc;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .final-cheatcode:hover {
@@ -648,7 +620,7 @@
             color: #1e0a10;
         }
 
-        /* Selected outfit summary section */
+        /* Outfit Summary Section */
         .outfit-summary {
             margin-top: 30px;
             padding: 20px 28px;
@@ -672,11 +644,6 @@
             line-height: 1.6;
         }
 
-        .summary-placeholder {
-            color: #dbaa98;
-            font-style: italic;
-        }
-
         .reset-btn {
             margin-top: 15px;
             background: rgba(255, 200, 180, 0.2);
@@ -695,22 +662,11 @@
         }
 
         @media (max-width: 780px) {
-            .outfit-guide {
-                padding: 30px 20px;
-            }
-            .step-item {
-                padding: 16px 20px;
-            }
-            .step-name {
-                font-size: 1.1rem;
-            }
-            .guide-title {
-                font-size: 2rem;
-            }
-            .step-list li {
-                font-size: 0.75rem;
-                padding: 5px 12px;
-            }
+            .outfit-guide { padding: 30px 20px; }
+            .step-item { padding: 16px 20px; }
+            .step-name { font-size: 1.1rem; }
+            .guide-title { font-size: 2rem; }
+            .step-list li { font-size: 0.75rem; padding: 5px 12px; }
         }
 
         .vogue-spotlight {
@@ -740,84 +696,55 @@
             line-height: 1.5;
         }
 
-        /* Meryl Streep Quote */
-        .fancy-quote {
+        /* ========== FANCY ENDING QUOTE - NO BOX, JUST ELEGANT TYPOGRAPHY ========== */
+        .fancy-ending {
             text-align: center;
-            margin: 80px 0 60px;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, #4a1522 0%, #2d0d15 100%);
-            border-radius: 60px;
-            border: 1px solid #dbaa98;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+            margin: 70px 0 50px;
+            padding: 0 20px;
         }
 
-        .fancy-quote::before {
-            content: '"';
+        .ending-quote {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 15rem;
-            position: absolute;
-            left: 20px;
-            top: -40px;
-            opacity: 0.08;
-            color: #ffddcc;
-            pointer-events: none;
-        }
-
-        .fancy-quote::after {
-            content: '"';
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 15rem;
-            position: absolute;
-            right: 20px;
-            bottom: -80px;
-            opacity: 0.08;
-            color: #ffddcc;
-            pointer-events: none;
-        }
-
-        .quote-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 500;
+            font-size: 3.2rem;
+            font-weight: 600;
             font-style: italic;
-            color: #fff2ea;
+            color: #ffefe7;
             letter-spacing: 1px;
-            line-height: 1.4;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 12px;
         }
 
-        .quote-author {
+        .ending-author {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
             font-weight: 400;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #dbaa98;
-            position: relative;
-            z-index: 1;
         }
 
-        .quote-author::before {
+        .ending-author::before {
             content: "— ";
             letter-spacing: 0;
         }
 
-        .divider {
-            width: 80px;
+        /* Decorative line above the ending */
+        .ending-decoration {
+            width: 100px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #dbaa98, transparent);
-            margin: 20px auto 0;
+            background: linear-gradient(90deg, transparent, #dbaa98, #c48976, #dbaa98, transparent);
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 780px) {
+            .ending-quote { font-size: 2.2rem; }
+            .ending-author { font-size: 1rem; letter-spacing: 3px; }
         }
 
         footer {
             border-top: 1px solid #c18c78;
-            margin-top: 40px;
+            margin-top: 30px;
             padding: 40px 0 32px;
             text-align: center;
             font-size: 0.8rem;
@@ -836,25 +763,12 @@
         .copyright {
             margin-top: 20px;
         }
-
-        @media (max-width: 780px) {
-            .quote-text {
-                font-size: 1.5rem;
-            }
-            .fancy-quote {
-                padding: 35px 20px;
-                margin: 50px 0 40px;
-            }
-            .fancy-quote::before,
-            .fancy-quote::after {
-                font-size: 8rem;
-            }
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- header with navigation -->
     <div class="top-bar">
         <div class="logo-area">
             <h1>Élan Atelier</h1>
@@ -872,6 +786,7 @@
         </div>
     </div>
 
+    <!-- hero section -->
     <div class="hero-section">
         <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
         <div class="hero-overlay">
@@ -885,6 +800,7 @@
         </div>
     </div>
 
+    <!-- welcome section -->
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
@@ -903,6 +819,7 @@
         </div>
     </div>
 
+    <!-- Categories Section -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -924,7 +841,7 @@
         </div>
     </div>
 
-    <!-- INTERACTIVE OUTFIT GUIDE SECTION - Clickable Options -->
+    <!-- INTERACTIVE OUTFIT GUIDE SECTION -->
     <div class="outfit-guide">
         <div class="guide-title">How to Pick an Outfit</div>
         <div style="text-align: center;">
@@ -933,7 +850,7 @@
         
         <div class="steps-container" id="stepsContainer">
             <!-- STEP 1 - VIBE -->
-            <div class="step-item" data-step="1">
+            <div class="step-item">
                 <div class="step-header">
                     <span class="step-number">STEP 1</span>
                     <span class="step-name">Pick your VIBE (this is your main character energy)</span>
@@ -949,7 +866,7 @@
             </div>
 
             <!-- STEP 2 - BASE OUTFIT -->
-            <div class="step-item" data-step="2">
+            <div class="step-item">
                 <div class="step-header">
                     <span class="step-number">STEP 2</span>
                     <span class="step-name">Choose your BASE outfit</span>
@@ -965,7 +882,7 @@
             </div>
 
             <!-- STEP 3 - LAYER -->
-            <div class="step-item" data-step="3">
+            <div class="step-item">
                 <div class="step-header">
                     <span class="step-number">STEP 3</span>
                     <span class="step-name">Add the "I have taste" layer</span>
@@ -980,7 +897,7 @@
             </div>
 
             <!-- STEP 4 - COLOR MOOD -->
-            <div class="step-item" data-step="4">
+            <div class="step-item">
                 <div class="step-header">
                     <span class="step-number">STEP 4</span>
                     <span class="step-name">Choose your color mood</span>
@@ -990,4 +907,36 @@
                     <li data-value="Black & white (timeless elite)">Black & white (timeless elite)</li>
                     <li data-value="Neutrals (quiet luxury)">Neutrals (quiet luxury)</li>
                     <li data-value="Deep tones (rich energy)">Deep tones (rich energy)</li>
-                    <li data-value="One pop color (for drama
+                    <li data-value="One pop color (for drama)">One pop color (for drama)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 5 - SHOES -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 5</span>
+                    <span class="step-name">Shoes = personality reveal</span>
+                </div>
+                <div class="step-description">What are you stepping out in?</div>
+                <ul class="step-list" data-step-id="shoes">
+                    <li data-value="Heels (power walk mode activated)">Heels (power walk mode activated)</li>
+                    <li data-value="Loafers (rich student energy)">Loafers (rich student energy)</li>
+                    <li data-value="Clean sneakers (effortless cool)">Clean sneakers (effortless cool)</li>
+                    <li data-value="Boots (don't mess with me vibe)">Boots (don't mess with me vibe)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 6 - ACCESSORIES -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 6</span>
+                    <span class="step-name">Accessories (aka final boss items)</span>
+                </div>
+                <div class="step-description">Pick wisely—don't overstack:</div>
+                <ul class="step-list" data-step-id="accessories">
+                    <li data-value="Small bag or clutch">Small bag or clutch</li>
+                    <li data-value="Watch or bracelet">Watch or bracelet</li>
+                    <li data-value="Earrings or chain">Earrings or chain</li>
+                    <li data-value="Sunglasses (instant upgrade)">Sunglasses (instant upgrade)</li>
+                </ul>
+           
