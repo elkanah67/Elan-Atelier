@@ -464,6 +464,144 @@
             margin: 0 auto;
         }
 
+        /* How to Pick an Outfit Section - Step by Step */
+        .outfit-guide {
+            margin: 70px 0 60px;
+            background: linear-gradient(135deg, #3d121f 0%, #2a0d16 100%);
+            border-radius: 48px;
+            padding: 50px 40px;
+            border: 1px solid #c48976;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .guide-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #ffefe7;
+            letter-spacing: 1px;
+        }
+
+        .guide-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #dbaa98;
+            margin-bottom: 45px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px dashed #c48976;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 24px;
+            padding: 22px 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid #c48976;
+        }
+
+        .step-item:hover {
+            background: rgba(0, 0, 0, 0.45);
+            transform: translateX(8px);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #c48976;
+            letter-spacing: 1px;
+        }
+
+        .step-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffefe7;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e6d5ca;
+            padding-left: 10px;
+            border-left: 2px solid rgba(196, 137, 118, 0.4);
+            margin-top: 8px;
+        }
+
+        .step-list {
+            list-style: none;
+            margin-top: 12px;
+            padding-left: 10px;
+        }
+
+        .step-list li {
+            font-size: 0.9rem;
+            color: #e6d5ca;
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #c48976;
+            font-size: 0.8rem;
+        }
+
+        .final-cheatcode {
+            background: rgba(196, 137, 118, 0.15);
+            border-radius: 20px;
+            padding: 18px 25px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid #c48976;
+        }
+
+        .final-cheatcode p {
+            font-size: 1rem;
+            font-style: italic;
+            color: #ffefe7;
+            margin: 0;
+        }
+
+        @media (max-width: 780px) {
+            .outfit-guide {
+                padding: 30px 20px;
+            }
+            .step-item {
+                padding: 18px 20px;
+            }
+            .step-name {
+                font-size: 1.2rem;
+            }
+            .guide-title {
+                font-size: 1.8rem;
+            }
+        }
+
         .vogue-spotlight {
             margin: 48px 0 64px;
             text-align: center;
@@ -667,29 +805,135 @@
         </div>
     </div>
 
-    <!-- Categories Section with NEW fancy descriptions -->
+    <!-- Categories Section -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
-            <!-- Clothing card - NEW DESCRIPTION -->
             <div class="card card-clothing">
                 <i class="fas fa-tshirt"></i>
                 <h4>Clothing</h4>
                 <p>Clothing isn't merely worn—it becomes a statement of quiet extravagance, where every fold and fabric speaks a language of effortless elegance.</p>
             </div>
             
-            <!-- Shoes card - NEW DESCRIPTION -->
             <div class="card card-shoes">
                 <i class="fas fa-shoe-prints"></i>
                 <h4>Shoes</h4>
                 <p>Shoes aren't just worn—they carry a quiet extravagance, where every step echoes with effortless elegance and intention.</p>
             </div>
             
-            <!-- Accessories card - NEW DESCRIPTION -->
             <div class="card card-accessories">
                 <i class="fas fa-glasses"></i>
                 <h4>Accessories</h4>
                 <p>Accessories aren't merely added—they refine the silhouette, a subtle extravagance where every detail glimmers with quiet intention and grace.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW TO PICK AN OUTFIT SECTION - STEP BY STEP -->
+    <div class="outfit-guide">
+        <div class="guide-title">How to Pick an Outfit</div>
+        <div style="text-align: center;">
+            <div class="guide-subtitle">Step by Step Guide</div>
+        </div>
+        
+        <div class="steps-container">
+            <!-- STEP 1 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 1:</span>
+                    <span class="step-name">Pick your VIBE (this is your main character energy)</span>
+                </div>
+                <div class="step-description">What are you going for today?</div>
+                <ul class="step-list">
+                    <li>"Rich CEO in disguise"</li>
+                    <li>"Silent luxury, don't talk to me"</li>
+                    <li>"Main character at a rooftop party"</li>
+                    <li>"Soft glam but still expensive"</li>
+                    <li>"Dangerously well-dressed"</li>
+                </ul>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 2:</span>
+                    <span class="step-name">Choose your BASE outfit</span>
+                </div>
+                <div class="step-description">This is your foundation—no chaos yet. Pick one:</div>
+                <ul class="step-list">
+                    <li>Sharp trousers + fitted top</li>
+                    <li>Bodycon dress / sleek midi dress</li>
+                    <li>Oversized blazer + shorts or mini skirt</li>
+                    <li>Clean co-ord set (matching top + bottom)</li>
+                    <li>Simple fitted jeans + elevated top (yes, jeans can be fancy if done right)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 3:</span>
+                    <span class="step-name">Add the "I have taste" layer</span>
+                </div>
+                <div class="step-description">Now we upgrade it:</div>
+                <ul class="step-list">
+                    <li>Blazer (instant power boost)</li>
+                    <li>Trench coat (mysterious + expensive vibes)</li>
+                    <li>Knit cardigan (soft luxury)</li>
+                    <li>Leather jacket (main character energy unlocked)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 4:</span>
+                    <span class="step-name">Choose your color mood</span>
+                </div>
+                <div class="step-description">Don't overthink—just pick:</div>
+                <ul class="step-list">
+                    <li>Black & white (timeless elite)</li>
+                    <li>Neutrals (quiet luxury)</li>
+                    <li>Deep tones (rich energy)</li>
+                    <li>One pop color (for drama)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 5:</span>
+                    <span class="step-name">Shoes = personality reveal</span>
+                </div>
+                <div class="step-description">What are you stepping out in?</div>
+                <ul class="step-list">
+                    <li>Heels (power walk mode activated)</li>
+                    <li>Loafers (rich student energy)</li>
+                    <li>Clean sneakers (effortless cool)</li>
+                    <li>Boots (don't mess with me vibe)</li>
+                </ul>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <span class="step-number">STEP 6:</span>
+                    <span class="step-name">Accessories (aka final boss items)</span>
+                </div>
+                <div class="step-description">Pick wisely—don't overstack:</div>
+                <ul class="step-list">
+                    <li>Small bag or clutch</li>
+                    <li>Watch or bracelet</li>
+                    <li>Earrings or chain</li>
+                    <li>Sunglasses (instant upgrade)</li>
+                </ul>
+            </div>
+
+            <!-- FINAL STEP - THE CHEAT CODE -->
+            <div class="final-cheatcode">
+                <p><strong>FINAL STEP: The cheat code</strong><br>
+                Put it on like you already own the place.<br>
+                If it feels slightly "too much," you're probably doing it right.</p>
             </div>
         </div>
     </div>
