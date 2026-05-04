@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Make Your Outfit | Élan Atelier</title>
+    <title>Élan Atelier | Home - Timeless Elegance</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #6a1e2c; font-family: 'Inter', sans-serif; color: #f6ede8; line-height: 1.4; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* header */
+        body {
+            background-color: #6a1e2c;
+            font-family: 'Inter', sans-serif;
+            color: #f6ede8;
+            line-height: 1.4;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header & navigation */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -21,241 +39,653 @@
             border-bottom: 1px solid #e6bcad;
             margin-bottom: 32px;
         }
-        .logo-area h1 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 2rem; color: #fff2ea; }
-        .logo-area p { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #f5d1c2; margin-top: 4px; }
-        .nav-links { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #f3e2d9; transition: color 0.2s; }
-        .nav-links a:hover { color: #ffddcc; }
-        .home-btn { background: #c48976; color: #4f1622 !important; padding: 8px 20px; border-radius: 40px; font-weight: 700 !important; }
-        .home-btn:hover { background: #ffddcc; transform: scale(1.05); }
+
+        .logo-area h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+            color: #fff2ea;
+        }
+
+        .logo-area p {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f5d1c2;
+            margin-top: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #f3e2d9;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffddcc;
+        }
+
+        .active-page {
+            color: #ffddcc !important;
+            border-bottom: 2px solid #ffddcc;
+            padding-bottom: 4px;
+        }
+
+        /* Make Your Outfit Button */
+        .outfit-nav-btn {
+            background: #c48976;
+            color: #4f1622 !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .outfit-nav-btn:hover {
+            background: #ffddcc;
+            color: #4f1622 !important;
+            transform: scale(1.05);
+        }
+
+        /* search bar styles */
+        .search-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(79, 22, 34, 0.8);
+            padding: 4px 12px;
+            border-radius: 60px;
+            border: 1px solid #c48976;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover {
+            border-color: #ffddcc;
+            background: rgba(79, 22, 34, 1);
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            color: #ffede3;
+            font-family: 'Inter', sans-serif;
+            width: 160px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #dbaa98;
+            font-size: 0.8rem;
+        }
+
+        .search-button {
+            background: transparent;
+            border: none;
+            color: #ffddcc;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 6px 8px;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-button:hover {
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .vogue-badge {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background: #4f1622;
+            padding: 6px 14px;
+            border-radius: 40px;
+            color: #ffede3;
+            border: 1px solid #c48976;
+        }
 
         @media (max-width: 780px) {
+            .search-input { width: 120px; }
+            .nav-links { gap: 16px; }
+        }
+
+        /* hero section */
+        .hero-section {
+            border-radius: 32px;
+            margin-bottom: 48px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.35);
+            position: relative;
+            min-height: 520px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 1;
+            background: rgba(60, 15, 25, 0.55);
+            backdrop-filter: brightness(0.98) blur(0.8px);
+            border-radius: 32px;
+            padding: 80px 32px 72px;
+            transition: all 0.2s;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-quote {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-quote p:first-child {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-weight: 500;
+            color: #fffcf0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            margin-bottom: 16px;
+            background: rgba(0,0,0,0.3);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-quote h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.9rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 20px auto 0;
+            line-height: 1.2;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+            letter-spacing: -0.2px;
+        }
+
+        .hero-quote .attribution {
+            margin-top: 28px;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #fff8f0;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 780px) {
+            .hero-overlay { padding: 48px 20px; min-height: 400px; }
+            .hero-quote h2 { font-size: 2rem; }
+            .hero-quote p:first-child { font-size: 0.9rem; letter-spacing: 3px; }
+            .hero-section { min-height: 400px; }
             .container { padding: 0 20px; }
             .top-bar { flex-direction: column; gap: 16px; }
             .nav-links { gap: 20px; }
         }
 
-        /* Hero section for outfit page */
-        .page-hero {
-            text-align: center;
-            margin: 20px 0 40px;
-        }
-        .page-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: #fff2ea;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        .page-hero p {
-            color: #dbaa98;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin-top: 10px;
+        .welcome-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            margin: 56px 0 64px;
+            align-items: center;
         }
 
-        /* Outfit Guide Section */
-        .outfit-guide {
-            margin: 30px 0 60px;
-            background: linear-gradient(135deg, #2d0d15 0%, #4a1a28 50%, #2d0d15 100%);
-            border-radius: 48px;
-            padding: 50px 40px;
-            border: 1px solid #ffb7a0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
+        .welcome-text {
+            flex: 1.2;
         }
-        .outfit-guide::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 180, 150, 0.08) 0%, transparent 70%);
-            animation: subtleGlow 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-        @keyframes subtleGlow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-        .guide-title {
+
+        .welcome-text h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            color: #ffffff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+            color: #fff8f2;
         }
-        .guide-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffcfbc;
-            margin-bottom: 45px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: rgba(255, 220, 200, 0.15);
-            display: inline-block;
-            width: auto;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 8px 24px;
-            border-radius: 60px;
-            position: relative;
-            z-index: 1;
+
+        .welcome-text p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #f3e4db;
+            margin-bottom: 24px;
         }
-        .steps-container {
+
+        .signature-line {
+            border-top: 1px solid #eacabb;
+            width: 80px;
+            margin: 20px 0 16px;
+        }
+
+        .welcome-quote {
+            font-style: italic;
+            font-weight: 400;
+            color: #ffefdf;
+            font-size: 1.1rem;
+        }
+
+        .welcome-image {
+            flex: 0.8;
+            background: #551a28;
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px -12px rgba(0,0,0,0.5);
+            border: 1px solid #bc7f6d;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 2px solid #dbaa98;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .welcome-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .icon-row {
+            margin: 12px 0 8px;
+        }
+
+        .icon-row i {
+            font-size: 2rem;
+            color: #ffddcc;
+            margin: 0 6px;
+        }
+
+        .welcome-image p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #ffefe7;
+            margin-top: 8px;
+        }
+
+        .categories-section {
+            margin: 64px 0 56px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            border-left: 4px solid #ffcdbb;
+            padding-left: 20px;
+            margin-bottom: 36px;
+            color: #fff6ef;
+        }
+
+        .category-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 210px;
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .card > * {
             position: relative;
             z-index: 1;
         }
-        .step-item {
-            background: linear-gradient(135deg, rgba(255, 220, 200, 0.08) 0%, rgba(255, 180, 150, 0.05) 100%);
-            border-radius: 28px;
-            padding: 20px 28px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #ffb7a0;
-        }
-        .step-item:hover {
-            background: linear-gradient(135deg, rgba(255, 220, 200, 0.2) 0%, rgba(255, 180, 150, 0.12) 100%);
-            transform: translateX(10px);
-            border-left-color: #ffddcc;
-        }
-        .step-header {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-        .step-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #ffcfbc;
-            background: rgba(255, 200, 180, 0.2);
-            padding: 4px 12px;
-            border-radius: 40px;
-        }
-        .step-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #ffffff;
-        }
-        .step-description {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #f0d5c8;
-            padding-left: 12px;
-            border-left: 2px solid rgba(255, 200, 180, 0.4);
-            margin-top: 8px;
-            font-style: italic;
-        }
-        .step-list {
-            list-style: none;
-            margin-top: 12px;
-            padding-left: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .step-list li {
-            font-size: 0.85rem;
-            color: #f0d5c8;
-            padding: 8px 18px;
-            background: rgba(255, 220, 200, 0.1);
-            border-radius: 40px;
-            transition: all 0.2s ease;
-            display: inline-block;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-        .step-list li:hover {
-            background: rgba(255, 200, 180, 0.3);
-            transform: scale(1.02);
-            color: #ffffff;
-        }
-        .step-list li.selected {
-            background: #c48976;
-            color: #2d0d15;
-            border-color: #ffddcc;
-            box-shadow: 0 0 12px rgba(196, 137, 118, 0.5);
-            font-weight: 600;
-        }
-        .final-cheatcode {
-            background: linear-gradient(135deg, #c48976 0%, #a86b58 100%);
-            border-radius: 28px;
-            padding: 22px 28px;
-            margin-top: 20px;
-            text-align: center;
-            border: 1px solid #ffddcc;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-        }
-        .final-cheatcode:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-        .final-cheatcode p {
-            font-size: 1.05rem;
-            font-style: italic;
-            color: #2d0d15;
-            margin: 0;
-            font-weight: 600;
-        }
-        .final-cheatcode p strong {
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 8px;
-            color: #1e0a10;
+
+        .card-clothing { background-image: url('IMG_0166.jpeg'); }
+        .card-shoes { background-image: url('IMG_0167.jpeg'); }
+        .card-accessories { background-image: url('IMG_0168.jpeg'); }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
         }
 
-        /* Outfit Summary */
-        .outfit-summary {
-            margin-top: 30px;
-            padding: 20px 28px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 28px;
-            border: 1px dashed #ffb7a0;
+        .card i {
+            font-size: 3rem;
+            color: #ffe4d4;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 16px;
+            color: #fffcf5;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #f5e2d7;
+            margin-bottom: 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* Promo button to Make Your Outfit */
+        .outfit-promo {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+
+        .big-outfit-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c48976, #a86b58);
+            color: white;
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid #ffddcc;
+        }
+
+        .big-outfit-btn:hover {
+            background: linear-gradient(135deg, #dbaa98, #c48976);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .vogue-spotlight {
+            margin: 48px 0 64px;
             text-align: center;
         }
-        .outfit-summary h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: #ffcfbc;
-            margin-bottom: 12px;
+
+        .vogue-tag {
+            background: #40131f;
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            color: #ffe7db;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            border: 1px solid #ca907b;
         }
-        .summary-content {
-            font-size: 0.9rem;
-            color: #f0d5c8;
-            line-height: 1.6;
-        }
-        .reset-btn {
-            margin-top: 15px;
-            background: rgba(255, 200, 180, 0.2);
-            border: 1px solid #c48976;
-            padding: 6px 20px;
-            border-radius: 40px;
-            color: #ffcfbc;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.2s ease;
-        }
-        .reset-btn:hover {
-            background: #c48976;
-            color: #2d0d15;
+
+        .vogue-message {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #ffe3d6;
+            letter-spacing: 0.5px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
 
         /* Fancy Ending */
         .fancy-ending {
             text-align: center;
-            margin: 50px 0 50px;
+            margin: 70px 0 50px;
             padding: 0 20px;
         }
-        .ending-quote
+
+        .ending-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            font-style: italic;
+            color: #ffefe7;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 12px;
+        }
+
+        .ending-author {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #dbaa98;
+        }
+
+        .ending-author::before {
+            content: "— ";
+            letter-spacing: 0;
+        }
+
+        .ending-decoration {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #dbaa98, #c48976, #dbaa98, transparent);
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 780px) {
+            .ending-quote { font-size: 2.2rem; }
+            .ending-author { font-size: 1rem; letter-spacing: 3px; }
+        }
+
+        footer {
+            border-top: 1px solid #c18c78;
+            margin-top: 30px;
+            padding: 40px 0 32px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #fee7dd;
+        }
+
+        .smile-tag {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-style: italic;
+            font-weight: 400;
+            color: #ffe6da;
+        }
+
+        .copyright {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-bar">
+        <div class="logo-area">
+            <h1>Élan Atelier</h1>
+            <p>Effortless elegance, tailored to you</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active-page">Home</a>
+            <a href="make-your-outfit.html" class="outfit-nav-btn">✨ MAKE YOUR OUTFIT</a>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
+                <button id="searchButton" class="search-button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="vogue-badge">VOGUE FT.</div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
+        <div class="hero-overlay">
+            <div class="hero-quote">
+                <p>What should I wear today?</p>
+                <h2>Have you tried Élan Atelier</h2>
+                <div class="attribution">
+                    “Your clothes maybe Chanel, Gucci, your shoes crocodile but baby you're never fully dressed without a smile” <br> — ANNIÉ
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="outfit-promo">
+        <a href="make-your-outfit.html" class="big-outfit-btn">👗 CREATE YOUR PERFECT OUTFIT →</a>
+    </div>
+
+    <div class="welcome-grid">
+        <div class="welcome-text">
+            <h3>For the ones who dress with intention.</h3>
+            <p>Welcome to Élan Atelier — a space created for teenagers that see fashion as more than just trends. This is for those who prefer timeless elegance over streetwear and who express themselves through refined, polished style. Élan Atelier celebrates individuality, confidence and the art of dressing with intention.</p>
+            <div class="signature-line"></div>
+            <p class="welcome-quote">"Elegance is not about being noticed, it's about being remembered."</p>
+        </div>
+        <div class="welcome-image">
+            <img src="IMG_0169.jpeg" alt="Élan Atelier Style" onerror="this.onerror=null; this.style.display='none';">
+            <div class="icon-row">
+                <i class="fas fa-gem"></i>
+                <i class="fas fa-vest"></i>
+                <i class="fas fa-shoe-prints"></i>
+            </div>
+            <p>curated with purpose · deep wine atelier</p>
+        </div>
+    </div>
+
+    <div class="categories-section">
+        <div class="section-title">Edit by category</div>
+        <div class="category-cards">
+            <div class="card card-clothing">
+                <i class="fas fa-tshirt"></i>
+                <h4>Clothing</h4>
+                <p>Clothing isn't merely worn—it becomes a statement of quiet extravagance, where every fold and fabric speaks a language of effortless elegance.</p>
+            </div>
+            <div class="card card-shoes">
+                <i class="fas fa-shoe-prints"></i>
+                <h4>Shoes</h4>
+                <p>Shoes aren't just worn—they carry a quiet extravagance, where every step echoes with effortless elegance and intention.</p>
+            </div>
+            <div class="card card-accessories">
+                <i class="fas fa-glasses"></i>
+                <h4>Accessories</h4>
+                <p>Accessories aren't merely added—they refine the silhouette, a subtle extravagance where every detail glimmers with quiet intention and grace.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vogue-spotlight">
+        <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
+        <div class="vogue-message">
+            Where timeless meets tomorrow — a curation for the modern teenager.
+        </div>
+    </div>
+
+    <div class="ending-decoration"></div>
+    <div class="fancy-ending">
+        <div class="ending-quote">That's all.</div>
+        <div class="ending-author">Meryl Streep</div>
+    </div>
+
+    <footer>
+        <div class="smile-tag">
+            <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
+        </div>
+        <div class="copyright">
+            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    function performSearch() {
+        const searchQuery = searchInput.value.trim();
+        if (searchQuery !== '') {
+            const encodedQuery = encodeURIComponent(searchQuery);
+            window.location.href = `search.html?q=${encodedQuery}`;
+        } else {
+            alert('Please type something to search');
+        }
+    }
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
+
+</body>
+</html>
