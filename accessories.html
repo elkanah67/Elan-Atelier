@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Accessories Gallery | Élan Atelier - Black & White Elegance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            color: #f0f0f0;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 28px 0 16px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 32px;
+        }
+
+        .logo-area h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 2rem;
+            color: #fff2ea;
+        }
+
+        .logo-area p {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .back-home-btn {
+            background: #c48976;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-home-btn:hover {
+            background: #ffddcc;
+            transform: scale(1.02);
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin: 40px 0 50px;
+        }
+
+        .gallery-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #fff2ea;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-header p {
+            color: #aaa;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #c48976;
+            margin: 20px auto 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            aspect-ratio: 3 / 4;
+            background: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease, transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(80%);
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 15px 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .image-caption {
+            opacity: 1;
+        }
+
+        .image-caption h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffddcc;
+            letter-spacing: 1px;
+        }
+
+        .image-caption p {
+            font-size: 0.75rem;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            color: #c48976;
+            transform: scale(1.1);
+        }
+
+        .quote-section {
+            text-align: center;
+            margin: 60px 0 40px;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: #ffefe7;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        .quote-author {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c48976;
+        }
+
+        footer {
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            padding: 40px 0 32px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .smile-tag {
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #aaa;
+        }
+
+        @media (max-width: 780px) {
+            .container { padding: 0 20px; }
+            .top-bar { flex-direction: column; gap: 16px; text-align: center; }
+            .gallery-header h1 { font-size: 2.2rem; }
+            .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+            .quote-text { font-size: 1.3rem; }
+            .close-modal { top: 15px; right: 20px; font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-bar">
+        <div class="logo-area">
+            <h1>Élan Atelier</h1>
+            <p>Effortless elegance, tailored to you</p>
+        </div>
+        <a href="index.html" class="back-home-btn">
+            <i class="fas fa-arrow-left"></i> BACK TO HOME
+        </a>
+    </div>
+
+    <div class="gallery-header">
+        <h1>◈ ACCESSORIES GALLERY ◈</h1>
+        <p>Black & White • The Finishing Touch • Monochrome Details</p>
+        <div class="divider"></div>
+    </div>
+
+    <!-- 10 Black & White Accessories Photography Gallery -->
+    <div class="gallery-grid" id="galleryGrid">
+        <!-- Image 1 - Sunglasses -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=800&fit=crop" alt="Classic sunglasses">
+            <div class="image-caption">
+                <h3>Iconic Shades</h3>
+                <p>Mystery • Cool • Instant Upgrade</p>
+            </div>
+        </div>
+        <!-- Image 2 - Pearl Necklace -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=600&h=800&fit=crop" alt="Pearl necklace">
+            <div class="image-caption">
+                <h3>Timeless Pearls</h3>
+                <p>Elegance • Heritage • Grace</p>
+            </div>
+        </div>
+        <!-- Image 3 - Leather Handbag -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&h=800&fit=crop" alt="Designer handbag">
+            <div class="image-caption">
+                <h3>Heritage Bag</h3>
+                <p>Luxury • Structure • Investment</p>
+            </div>
+        </div>
+        <!-- Image 4 - Watch -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&h=800&fit=crop" alt="Elegant wristwatch">
+            <div class="image-caption">
+                <h3>Timeless Timepiece</h3>
+                <p>Precision • Legacy • Craft</p>
+            </div>
+        </div>
+        <!-- Image 5 - Earrings -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&h=800&fit=crop" alt="Diamond earrings">
+            <div class="image-caption">
+                <h3>Diamond Drops</h3>
+                <p>Sparkle • Light • Brilliance</p>
+            </div>
+        </div>
+        <!-- Image 6 - Silk Scarf -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&h=800&fit=crop" alt="Silk scarf">
+            <div class="image-caption">
+                <h3>Silk Poetry</h3>
+                <p>Fluid • Art • Expression</p>
+            </div>
+        </div>
+        <!-- Image 7 - Bracelet/Cuff -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&h=800&fit=crop" alt="Gold bracelet">
+            <div class="image-caption">
+                <h3>Golden Cuff</h3>
+                <p>Minimal • Bold • Statement</p>
+            </div>
+        </div>
+        <!-- Image 8 - Belt -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=800&fit=crop" alt="Leather belt">
+            <div class="image-caption">
+                <h3>Cinched Waist</h3>
+                <p>Definition • Structure • Polish</p>
+            </div>
+        </div>
+        <!-- Image 9 - Hat -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&h=800&fit=crop" alt="Wide brim hat">
+            <div class="image-caption">
+                <h3>Statement Hat</h3>
+                <p>Drama • Mystery • Flair</p>
+            </div>
+        </div>
+        <!-- Image 10 - Clutch Bag -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&h=800&fit=crop" alt="Evening clutch">
+            <div class="image-caption">
+                <h3>Evening Clutch</h3>
+                <p>Glamour • Compact • Luxe</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="quote-section">
+        <div class="quote-text">"Accessories are the exclamation point of a woman's outfit."</div>
+        <div class="quote-author">Michael Kors</div>
+    </div>
+
+    <!-- Fancy Ending -->
+    <div class="ending-decoration" style="width: 100px; height: 2px; background: linear-gradient(90deg, transparent, #c48976, transparent); margin: 0 auto 40px auto;"></div>
+    <div class="fancy-ending" style="text-align: center; margin-bottom: 50px;">
+        <div class="ending-quote" style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-style: italic; color: #ffefe7;">That's all.</div>
+        <div class="ending-author" style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; color: #c48976;">— Meryl Streep</div>
+    </div>
+
+    <footer>
+        <div class="smile-tag">
+            <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
+        </div>
+        <div class="copyright">
+            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img id="modalImage" src="" alt="Enlarged view">
+</div>
+
+<script>
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.close-modal');
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgElement = this.querySelector('img');
+            const imgSrc = imgElement.src;
+            modalImg.src = imgSrc;
+            modal.classList.add('active');
+        });
+    });
+
+    closeModal.addEventListener('click', function() {
+        modal.classList.remove('active');
+        modalImg.src = '';
+    });
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            modalImg.src = '';
+        }
+    });
+</script>
+
+</body>
+</html>
