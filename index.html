@@ -83,6 +83,22 @@
             padding-bottom: 4px;
         }
 
+        /* Make Your Outfit Button */
+        .outfit-nav-btn {
+            background: #c48976;
+            color: #4f1622 !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .outfit-nav-btn:hover {
+            background: #ffddcc;
+            color: #4f1622 !important;
+            transform: scale(1.05);
+        }
+
         /* search bar styles */
         .search-container {
             display: inline-flex;
@@ -334,7 +350,6 @@
             margin-top: 8px;
         }
 
-        /* Categories Section */
         .categories-section {
             margin: 64px 0 56px;
         }
@@ -428,245 +443,31 @@
             margin: 0 auto;
         }
 
-        /* ========== INTERACTIVE OUTFIT GUIDE SECTION ========== */
-        .outfit-guide {
-            margin: 70px 0 60px;
-            background: linear-gradient(135deg, #2d0d15 0%, #4a1a28 50%, #2d0d15 100%);
-            border-radius: 48px;
-            padding: 50px 40px;
-            border: 1px solid #ffb7a0;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 200, 180, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .outfit-guide::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 180, 150, 0.08) 0%, transparent 70%);
-            animation: subtleGlow 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes subtleGlow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
-        }
-
-        .guide-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
+        /* Promo button to Make Your Outfit */
+        .outfit-promo {
             text-align: center;
-            margin-bottom: 8px;
-            color: #ffffff;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
+            margin: 30px 0 20px;
         }
 
-        .guide-subtitle {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ffcfbc;
-            margin-bottom: 45px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            background: rgba(255, 220, 200, 0.15);
+        .big-outfit-btn {
             display: inline-block;
-            width: auto;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 8px 24px;
-            border-radius: 60px;
-            backdrop-filter: blur(4px);
-            position: relative;
-            z-index: 1;
-        }
-
-        .steps-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-item {
-            background: linear-gradient(135deg, rgba(255, 220, 200, 0.08) 0%, rgba(255, 180, 150, 0.05) 100%);
-            border-radius: 28px;
-            padding: 20px 28px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #ffb7a0;
-            backdrop-filter: blur(2px);
-        }
-
-        .step-item:hover {
-            background: linear-gradient(135deg, rgba(255, 220, 200, 0.2) 0%, rgba(255, 180, 150, 0.12) 100%);
-            transform: translateX(10px);
-            border-left-color: #ffddcc;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        .step-header {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .step-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #ffcfbc;
+            background: linear-gradient(135deg, #c48976, #a86b58);
+            color: white;
+            text-decoration: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
             letter-spacing: 1px;
-            background: rgba(255, 200, 180, 0.2);
-            padding: 4px 12px;
-            border-radius: 40px;
-        }
-
-        .step-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #ffffff;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-        }
-
-        .step-description {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: #f0d5c8;
-            padding-left: 12px;
-            border-left: 2px solid rgba(255, 200, 180, 0.4);
-            margin-top: 8px;
-            font-style: italic;
-        }
-
-        /* CLICKABLE OPTIONS - with selected/highlighted state */
-        .step-list {
-            list-style: none;
-            margin-top: 12px;
-            padding-left: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .step-list li {
-            font-size: 0.85rem;
-            color: #f0d5c8;
-            padding: 8px 18px;
-            background: rgba(255, 220, 200, 0.1);
-            border-radius: 40px;
-            transition: all 0.2s ease;
-            display: inline-block;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .step-list li:hover {
-            background: rgba(255, 200, 180, 0.3);
-            transform: scale(1.02);
-            color: #ffffff;
-        }
-
-        /* SELECTED/HIGHLIGHTED STATE - stays clicked until another option is chosen */
-        .step-list li.selected {
-            background: #c48976;
-            color: #2d0d15;
-            border-color: #ffddcc;
-            box-shadow: 0 0 12px rgba(196, 137, 118, 0.5);
-            font-weight: 600;
-        }
-
-        /* Final cheat code */
-        .final-cheatcode {
-            background: linear-gradient(135deg, #c48976 0%, #a86b58 100%);
-            border-radius: 28px;
-            padding: 22px 28px;
-            margin-top: 20px;
-            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             border: 1px solid #ffddcc;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
         }
 
-        .final-cheatcode:hover {
+        .big-outfit-btn:hover {
+            background: linear-gradient(135deg, #dbaa98, #c48976);
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        }
-
-        .final-cheatcode p {
-            font-size: 1.05rem;
-            font-style: italic;
-            color: #2d0d15;
-            margin: 0;
-            font-weight: 600;
-            text-shadow: none;
-        }
-
-        .final-cheatcode p strong {
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 8px;
-            color: #1e0a10;
-        }
-
-        /* Outfit Summary Section */
-        .outfit-summary {
-            margin-top: 30px;
-            padding: 20px 28px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 28px;
-            border: 1px dashed #ffb7a0;
-            text-align: center;
-        }
-
-        .outfit-summary h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            color: #ffcfbc;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            font-size: 0.9rem;
-            color: #f0d5c8;
-            line-height: 1.6;
-        }
-
-        .reset-btn {
-            margin-top: 15px;
-            background: rgba(255, 200, 180, 0.2);
-            border: 1px solid #c48976;
-            padding: 6px 20px;
-            border-radius: 40px;
-            color: #ffcfbc;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.2s ease;
-        }
-
-        .reset-btn:hover {
-            background: #c48976;
-            color: #2d0d15;
-        }
-
-        @media (max-width: 780px) {
-            .outfit-guide { padding: 30px 20px; }
-            .step-item { padding: 16px 20px; }
-            .step-name { font-size: 1.1rem; }
-            .guide-title { font-size: 2rem; }
-            .step-list li { font-size: 0.75rem; padding: 5px 12px; }
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         .vogue-spotlight {
@@ -696,7 +497,7 @@
             line-height: 1.5;
         }
 
-        /* ========== FANCY ENDING QUOTE - NO BOX, JUST ELEGANT TYPOGRAPHY ========== */
+        /* Fancy Ending */
         .fancy-ending {
             text-align: center;
             margin: 70px 0 50px;
@@ -729,7 +530,6 @@
             letter-spacing: 0;
         }
 
-        /* Decorative line above the ending */
         .ending-decoration {
             width: 100px;
             height: 2px;
@@ -768,7 +568,6 @@
 <body>
 
 <div class="container">
-    <!-- header with navigation -->
     <div class="top-bar">
         <div class="logo-area">
             <h1>Élan Atelier</h1>
@@ -776,6 +575,7 @@
         </div>
         <div class="nav-links">
             <a href="index.html" class="active-page">Home</a>
+            <a href="make-your-outfit.html" class="outfit-nav-btn">✨ MAKE YOUR OUTFIT</a>
             <div class="search-container">
                 <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
                 <button id="searchButton" class="search-button" aria-label="Search">
@@ -786,7 +586,6 @@
         </div>
     </div>
 
-    <!-- hero section -->
     <div class="hero-section">
         <img class="hero-bg" src="Digital Closet.png" alt="Digital Closet background" onerror="this.onerror=null; this.src='Digital Closet (2).png'; this.onerror=function(){this.style.display='none'; this.parentElement.style.backgroundColor='#4a1522';}">
         <div class="hero-overlay">
@@ -800,7 +599,10 @@
         </div>
     </div>
 
-    <!-- welcome section -->
+    <div class="outfit-promo">
+        <a href="make-your-outfit.html" class="big-outfit-btn">👗 CREATE YOUR PERFECT OUTFIT →</a>
+    </div>
+
     <div class="welcome-grid">
         <div class="welcome-text">
             <h3>For the ones who dress with intention.</h3>
@@ -819,7 +621,6 @@
         </div>
     </div>
 
-    <!-- Categories Section -->
     <div class="categories-section">
         <div class="section-title">Edit by category</div>
         <div class="category-cards">
@@ -841,102 +642,50 @@
         </div>
     </div>
 
-    <!-- INTERACTIVE OUTFIT GUIDE SECTION -->
-    <div class="outfit-guide">
-        <div class="guide-title">How to Pick an Outfit</div>
-        <div style="text-align: center;">
-            <div class="guide-subtitle">Step by Step Guide</div>
+    <div class="vogue-spotlight">
+        <div class="vogue-tag">VOGUE FT. EDITORIAL</div>
+        <div class="vogue-message">
+            Where timeless meets tomorrow — a curation for the modern teenager.
         </div>
-        
-        <div class="steps-container" id="stepsContainer">
-            <!-- STEP 1 - VIBE -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 1</span>
-                    <span class="step-name">Pick your VIBE (this is your main character energy)</span>
-                </div>
-                <div class="step-description">What are you going for today?</div>
-                <ul class="step-list" data-step-id="vibe">
-                    <li data-value="Rich CEO in disguise">Rich CEO in disguise</li>
-                    <li data-value="Silent luxury, don't talk to me">Silent luxury, don't talk to me</li>
-                    <li data-value="Main character at a rooftop party">Main character at a rooftop party</li>
-                    <li data-value="Soft glam but still expensive">Soft glam but still expensive</li>
-                    <li data-value="Dangerously well-dressed">Dangerously well-dressed</li>
-                </ul>
-            </div>
+    </div>
 
-            <!-- STEP 2 - BASE OUTFIT -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 2</span>
-                    <span class="step-name">Choose your BASE outfit</span>
-                </div>
-                <div class="step-description">This is your foundation—no chaos yet. Pick one:</div>
-                <ul class="step-list" data-step-id="base">
-                    <li data-value="Sharp trousers + fitted top">Sharp trousers + fitted top</li>
-                    <li data-value="Bodycon dress / sleek midi dress">Bodycon dress / sleek midi dress</li>
-                    <li data-value="Oversized blazer + shorts or mini skirt">Oversized blazer + shorts or mini skirt</li>
-                    <li data-value="Clean co-ord set (matching top + bottom)">Clean co-ord set (matching top + bottom)</li>
-                    <li data-value="Simple fitted jeans + elevated top">Simple fitted jeans + elevated top</li>
-                </ul>
-            </div>
+    <div class="ending-decoration"></div>
+    <div class="fancy-ending">
+        <div class="ending-quote">That's all.</div>
+        <div class="ending-author">Meryl Streep</div>
+    </div>
 
-            <!-- STEP 3 - LAYER -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 3</span>
-                    <span class="step-name">Add the "I have taste" layer</span>
-                </div>
-                <div class="step-description">Now we upgrade it:</div>
-                <ul class="step-list" data-step-id="layer">
-                    <li data-value="Blazer (instant power boost)">Blazer (instant power boost)</li>
-                    <li data-value="Trench coat (mysterious + expensive vibes)">Trench coat (mysterious + expensive vibes)</li>
-                    <li data-value="Knit cardigan (soft luxury)">Knit cardigan (soft luxury)</li>
-                    <li data-value="Leather jacket (main character energy unlocked)">Leather jacket (main character energy unlocked)</li>
-                </ul>
-            </div>
+    <footer>
+        <div class="smile-tag">
+            <i class="far fa-smile-wink"></i> baby you're never fully dressed without a smile · ANNIÉ
+        </div>
+        <div class="copyright">
+            <p>© 2025 Élan Atelier — Effortless elegance, tailored to you. Celebrating individuality, confidence, and intention.</p>
+        </div>
+    </footer>
+</div>
 
-            <!-- STEP 4 - COLOR MOOD -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 4</span>
-                    <span class="step-name">Choose your color mood</span>
-                </div>
-                <div class="step-description">Don't overthink—just pick:</div>
-                <ul class="step-list" data-step-id="color">
-                    <li data-value="Black & white (timeless elite)">Black & white (timeless elite)</li>
-                    <li data-value="Neutrals (quiet luxury)">Neutrals (quiet luxury)</li>
-                    <li data-value="Deep tones (rich energy)">Deep tones (rich energy)</li>
-                    <li data-value="One pop color (for drama)">One pop color (for drama)</li>
-                </ul>
-            </div>
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
 
-            <!-- STEP 5 - SHOES -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 5</span>
-                    <span class="step-name">Shoes = personality reveal</span>
-                </div>
-                <div class="step-description">What are you stepping out in?</div>
-                <ul class="step-list" data-step-id="shoes">
-                    <li data-value="Heels (power walk mode activated)">Heels (power walk mode activated)</li>
-                    <li data-value="Loafers (rich student energy)">Loafers (rich student energy)</li>
-                    <li data-value="Clean sneakers (effortless cool)">Clean sneakers (effortless cool)</li>
-                    <li data-value="Boots (don't mess with me vibe)">Boots (don't mess with me vibe)</li>
-                </ul>
-            </div>
+    function performSearch() {
+        const searchQuery = searchInput.value.trim();
+        if (searchQuery !== '') {
+            const encodedQuery = encodeURIComponent(searchQuery);
+            window.location.href = `search.html?q=${encodedQuery}`;
+        } else {
+            alert('Please type something to search');
+        }
+    }
 
-            <!-- STEP 6 - ACCESSORIES -->
-            <div class="step-item">
-                <div class="step-header">
-                    <span class="step-number">STEP 6</span>
-                    <span class="step-name">Accessories (aka final boss items)</span>
-                </div>
-                <div class="step-description">Pick wisely—don't overstack:</div>
-                <ul class="step-list" data-step-id="accessories">
-                    <li data-value="Small bag or clutch">Small bag or clutch</li>
-                    <li data-value="Watch or bracelet">Watch or bracelet</li>
-                    <li data-value="Earrings or chain">Earrings or chain</li>
-                    <li data-value="Sunglasses (instant upgrade)">Sunglasses (instant upgrade)</li>
-                </ul>
-           
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    });
+</script>
+
+</body>
+</html>
